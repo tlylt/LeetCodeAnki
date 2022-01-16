@@ -1,6 +1,10 @@
 # LeetCodeAnki
 **TLDR**: LeetCode + Spaced Repetition
 
+# Tools
+- [Anki - Powerful, intelligent flash cards](https://apps.ankiweb.net/)
+- [LeetHub - Automatically sync your code to GitHub](https://github.com/QasimWani/LeetHub)
+
 # Reference Materials
 Books/Guides/Tools that I actually read through/think is useful/refer to frequently)
 
