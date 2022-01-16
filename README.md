@@ -13,7 +13,7 @@ Books/Guides/Tools that I actually read through/think is useful/refer to frequen
 （Proficiency in Mandarin required)
 - [《代码随想录》LeetCode 刷题攻略 by Carl](https://github.com/youngyangyang04/leetcode-master)
 - [LeetcodeTop 汇总互联网公司题库 by 一个搬砖的胖子](https://codetop.cc/home)
-# More materials
+# More Materials
 Books/Guides/Tools that I understand to be good and will take a closer look if needed
 
 - [Tech Interview Handbook](https://github.com/yangshun/tech-interview-handbook)
