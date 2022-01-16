@@ -6,7 +6,7 @@
 - [LeetHub - Automatically sync your code to GitHub](https://github.com/QasimWani/LeetHub)
 
 # Reference Materials
-Books/Guides/Tools that I actually read through/think is useful/refer to frequently)
+Books/Guides/Tools that I actually read through/think is useful/refer to frequently
 
 - [How to remember anything forever-ish by Nicky Case](https://ncase.me/remember/)
 
