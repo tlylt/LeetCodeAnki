@@ -1,6 +1,6 @@
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
-        ans = [0]* len(nums)
+        ans = [0] * len(nums)
         l = 0
         r = len(nums)-1
         pt = len(nums)-1
