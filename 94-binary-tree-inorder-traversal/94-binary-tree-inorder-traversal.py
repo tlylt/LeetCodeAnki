@@ -11,7 +11,7 @@ class Solution:
         s = []
         ans = []
         curr = root
-        while s or curr:
+        while curr or s:
             if curr:
                 s.append(curr)
                 curr = curr.left
@@ -20,4 +20,3 @@ class Solution:
                 ans.append(curr.val)
                 curr = curr.right
         return ans
-            
