@@ -9,14 +9,15 @@ class Solution:
                 result.append(path[:])
                 return
             for i in range(len(nums)):
+                if used[i]:
+                    continue
                 if i > 0 and nums[i] == nums[i-1] and used[i-1] == False:
                     continue
-                if not used[i]:
-                    path.append(nums[i])
-                    used[i] = True
-                    backtrack(nums)
-                    used[i] = False
-                    path.pop()
+                path.append(nums[i])
+                used[i] = True
+                backtrack(nums)
+                used[i] = False
+                path.pop()
         backtrack(nums)
         return result
                     
