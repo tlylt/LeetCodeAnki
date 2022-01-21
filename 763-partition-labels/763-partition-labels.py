@@ -1,14 +1,14 @@
 class Solution:
     def partitionLabels(self, s: str) -> List[int]:
-        hash = [0] * 26
+        h = [0]*26
         for i in range(len(s)):
-            hash[ord(s[i]) - ord('a')] = i
+            h[ord(s[i])-ord('a')] = i
         result = []
-        left = 0
+        l = 0
         right = 0
-        for i in range(len(s)):
-            right = max(right, hash[ord(s[i]) - ord('a')])
-            if i == right:
-                result.append(right - left + 1)
-                left = i+1
+        for j in range(len(s)):
+            right = max(right, h[ord(s[j]) - ord('a')])
+            if right == j:
+                result.append(right-l+1)
+                l = j+1
         return result
