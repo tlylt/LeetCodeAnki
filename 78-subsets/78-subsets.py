@@ -4,11 +4,11 @@ class Solution:
         path = []
         def backtrack(nums, startIdx):
             result.append(path[:])
-            if startIdx >= len(nums):
+            if len(path) == len(nums):
                 return
             for i in range(startIdx, len(nums)):
                 path.append(nums[i])
-                backtrack(nums, i+1)
+                backtrack(nums, i + 1)
                 path.pop()
-        backtrack(nums,0)
+        backtrack(nums, 0)
         return result
