@@ -13,7 +13,7 @@ class Solution:
         l = False
         r = False
         if root.left:
-            l = self.hasPathSum(root.left, targetSum-root.val)
+            l = self.hasPathSum(root.left, targetSum - root.val)
         if root.right:
-            r = self.hasPathSum(root.right, targetSum-root.val)
+            r = self.hasPathSum(root.right, targetSum - root.val)
         return l or r
