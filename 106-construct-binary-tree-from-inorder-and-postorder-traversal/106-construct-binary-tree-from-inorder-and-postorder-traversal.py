@@ -6,7 +6,7 @@
 #         self.right = right
 class Solution:
     def buildTree(self, inorder: List[int], postorder: List[int]) -> Optional[TreeNode]:
-        if not postorder:
+        if postorder == []:
             return None
         root_val = postorder.pop()
         root = TreeNode(root_val)
@@ -14,3 +14,4 @@ class Solution:
         root.left = self.buildTree(inorder[:idx], postorder[:len(inorder[:idx])])
         root.right = self.buildTree(inorder[idx+1:], postorder[len(inorder[:idx]):])
         return root
+        
