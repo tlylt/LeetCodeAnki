@@ -11,7 +11,7 @@ class Solution:
             for i in range(len(nums)):
                 if used[i] == 1:
                     continue
-                if i > 0 and nums[i] == nums[i - 1] and used[i-1] == 1:
+                if i > 0 and nums[i] == nums[i - 1] and used[i-1] == 0:
                     continue
                 path.append(nums[i])
                 used[i] = 1
