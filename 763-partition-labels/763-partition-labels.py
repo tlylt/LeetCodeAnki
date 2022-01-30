@@ -6,10 +6,9 @@ class Solution:
         ans = []
         l = 0
         right = 0
-        for j in range(len(s)):
-            right = max(right, h[s[j]])
-            if right == j:
+        for i in range(len(s)):
+            right = max(right, h[s[i]])
+            if right == i:
                 ans.append(right - l + 1)
-                l = j+1
+                l = right + 1
         return ans
-            
