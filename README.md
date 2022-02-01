@@ -20,5 +20,5 @@ Books/Guides/Tools that I understand to be good and will take a closer look if n
 - [Blink 75](https://techinterviewhandbook.org/best-practice-questions/)
 
 # Rewards & Motivation
-- [ ] Jan 2022
+- [x] Jan 2022
 - [ ] Feb 2022
