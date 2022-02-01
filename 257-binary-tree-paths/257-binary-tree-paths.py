@@ -11,7 +11,7 @@ class Solution:
         def backtrack(node):
             if not node.left and not node.right:
                 path.append(str(node.val))
-                result.append("->".join(path[:]))
+                result.append("->".join(path))
                 path.pop()
                 return
             path.append(str(node.val))
