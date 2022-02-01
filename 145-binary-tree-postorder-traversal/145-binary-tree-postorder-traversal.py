@@ -8,13 +8,13 @@ class Solution:
     def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         if not root:
             return []
-        s = [root]
+        s =[root]
         ans = []
         while s:
-            curr = s.pop()
-            ans.append(curr.val)
-            if curr.left:
-                s.append(curr.left)
-            if curr.right:
-                s.append(curr.right)
+            c = s.pop()
+            ans.append(c.val)
+            if c.left:
+                s.append(c.left)
+            if c.right:
+                s.append(c.right)
         return ans[::-1]
