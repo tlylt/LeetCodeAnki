@@ -9,7 +9,6 @@ class Solution:
         if not root:
             return True
         return self.helper(root.left, root.right)
-        
     def helper(self, a, b):
         if not a and not b:
             return True
@@ -19,7 +18,4 @@ class Solution:
             return False
         if a.val != b.val:
             return False
-        else:
-            l = self.helper(a.left, b.right)
-            r = self.helper(a.right, b.left)
-            return l and r
+        return self.helper(a.left, b.right) and self.helper(a.right,b.left)
