@@ -1,8 +1,8 @@
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
-        nums.sort()
         result = []
         path = []
+        nums.sort()
         def backtrack(nums, startIdx):
             result.append(path[:])
             if startIdx >= len(nums):
