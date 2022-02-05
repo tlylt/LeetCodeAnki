@@ -6,9 +6,9 @@ class Solution:
         right = 0
         l = 0
         ans = []
-        for r in range(len(s)):
-            right = max(right, h[s[r]])
-            if right == r:
-                ans.append(r-l+1)
-                l=r+1
+        for i in range(len(s)):
+            right = max(right, h[s[i]])
+            if right == i:
+                ans.append(right-l+1)
+                l = i+1
         return ans
