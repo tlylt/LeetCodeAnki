@@ -15,13 +15,17 @@ class Solution:
         q = deque([root])
         while q:
             l = len(q)
+            prev = None
             for i in range(l):
                 c = q.popleft()
+                if not prev:
+                    prev = c
+                else:
+                    prev.next = c
                 if c.left:
                     q.append(c.left)
                 if c.right:
                     q.append(c.right)
-                if i == l-1:
-                    continue
-                c.next = q[0]
+                prev = c
         return root
+                    
