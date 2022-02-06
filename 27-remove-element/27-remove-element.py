@@ -4,6 +4,7 @@ class Solution:
         for r in range(len(nums)):
             if nums[r] == val:
                 continue
-            nums[l] = nums[r]
-            l+=1
+            else:
+                nums[l] = nums[r]
+                l+=1
         return l
