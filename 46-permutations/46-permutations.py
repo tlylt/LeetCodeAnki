@@ -1,19 +1,19 @@
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         result = []
-        used = [0] * len(nums)
         path = []
-        def backtrack(nums, path):
+        used = [0] * len(nums)
+        def backtrack(nums):
             if len(path) == len(nums):
                 result.append(path[:])
                 return
             for i in range(len(nums)):
-                if used[i] == 1:
+                if used[i]:
                     continue
+                used[i] = 1
                 path.append(nums[i])
-                used[i] = True
-                backtrack(nums, path)
+                backtrack(nums)
                 path.pop()
-                used[i] = False
-        backtrack(nums, path)
+                used[i] = 0
+        backtrack(nums)
         return result
