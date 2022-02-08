@@ -9,7 +9,7 @@ class Solution:
         depth = -1
         left = 0
         def backtrack(root, curr):
-            nonlocal depth, left
+            nonlocal left, depth
             if curr > depth:
                 depth = curr
                 left = root.val
