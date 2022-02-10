@@ -20,4 +20,3 @@ class Solution:
                 path.pop()
         backtrack(nums)
         return result
-                
