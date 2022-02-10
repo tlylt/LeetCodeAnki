@@ -3,7 +3,7 @@ class Solution:
         result = []
         path = []
         def backtrack(n, k, startIdx):
-            if len(path) >= k:
+            if len(path) == k:
                 result.append(path[:])
                 return
             for i in range(startIdx, n-(k-len(path))+2):
