@@ -5,13 +5,14 @@ class Solution:
         def backtrack(k, n, startIdx):
             if len(path) == k and sum(path) == n:
                 result.append(path[:])
+                return
             if len(path) > k:
                 return
             if sum(path) > n:
                 return
-            for i in range(startIdx, 10-(k-len(path))+1):
+            for i in range(startIdx, 9-(k-len(path))+2):
                 path.append(i)
-                backtrack(k,n,i+1)
+                backtrack(k, n, i+1)
                 path.pop()
-        backtrack(k,n,1)
+        backtrack(k, n, 1)
         return result
