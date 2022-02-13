@@ -13,6 +13,7 @@ class Solution:
                     path.pop()
         backtrack(s, 0)
         return result
+                    
         
     def check(self, s):
         return s == s[::-1]
