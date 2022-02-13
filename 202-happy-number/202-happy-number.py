@@ -2,13 +2,13 @@ class Solution:
     def isHappy(self, n: int) -> bool:
         h = {}
         while True:
+            n = self.helper(n)
             if n == 1:
                 return True
-            n = self.helper(n)
             if n in h:
                 return False
             h[n] = 1
-        
+    
     def helper(self, n):
         ans = 0
         while n > 0:
