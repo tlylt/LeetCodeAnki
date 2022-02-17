@@ -7,9 +7,9 @@
 class Solution:
     def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
         left = 0
-        depth = -1
+        depth = 0
         def backtrack(node, curr):
-            nonlocal left, depth
+            nonlocal depth, left
             if curr > depth:
                 depth = curr
                 left = node.val
@@ -17,5 +17,5 @@ class Solution:
                 backtrack(node.left, curr+1)
             if node.right:
                 backtrack(node.right, curr+1)
-        backtrack(root, 0)
+        backtrack(root, 1)
         return left
