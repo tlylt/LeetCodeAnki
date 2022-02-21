@@ -6,16 +6,18 @@
 #         self.right = right
 class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
-            if self.helper(root, subRoot):
+        if not root and subRoot:
+            return False
+        stack = [root]
+        while stack:
+            c = stack.pop()
+            if self.helper(c, subRoot):
                 return True
-            else:
-                if root:
-                    return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
-                else:
-                    if not root and subRoot:
-                        return False
-                    else:
-                        return True
+            if c.left:
+                stack.append(c.left)
+            if c.right:
+                stack.append(c.right)
+        return False
     def helper(self, a, b):
         if not a and not b:
             return True
@@ -26,6 +28,4 @@ class Solution:
         if a.val != b.val:
             return False
         else:
-            l = self.helper(a.left, b.left)
-            r = self.helper(a.right, b.right)
-            return l and r
+            return self.helper(a.left, b.left) and self.helper(a.right, b.right)
