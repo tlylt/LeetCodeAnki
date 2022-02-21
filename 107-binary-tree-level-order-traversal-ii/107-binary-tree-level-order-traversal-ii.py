@@ -7,16 +7,18 @@
 class Solution:
     def levelOrderBottom(self, root: Optional[TreeNode]) -> List[List[int]]:
         result = []
-        def helper(node, depth):
-            if depth == len(result):
-                result.append([])
-            if node:
-                result[depth].append(node.val)
-                if node.left:
-                    helper(node.left, depth+1)
-                if node.right:
-                    helper(node.right, depth+1)
         if not root:
-            return []
-        helper(root, 0)
+            return result
+        q = deque([root])
+        while q:
+            temp = []
+            l = len(q)
+            for i in range(l):
+                c = q.popleft()
+                temp.append(c.val)
+                if c.left:
+                    q.append(c.left)
+                if c.right:
+                    q.append(c.right)
+            result.append(temp)
         return result[::-1]
