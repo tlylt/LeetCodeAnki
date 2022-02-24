@@ -8,9 +8,9 @@ class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         if not root:
             return []
-        ans = []
         s = []
         curr = root
+        ans = []
         while curr or s:
             if curr:
                 s.append(curr)
