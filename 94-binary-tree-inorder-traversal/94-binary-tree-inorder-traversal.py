@@ -9,14 +9,16 @@ class Solution:
         if not root:
             return []
         s = []
-        curr = root
         ans = []
-        while curr or s:
-            if curr:
-                s.append(curr)
-                curr = curr.left
+        c = root
+        while c or s:
+            if c:
+                s.append(c)
+                c = c.left
             else:
-                curr = s.pop()
-                ans.append(curr.val)
-                curr = curr.right
+                c = s.pop()
+                ans.append(c.val)
+                c = c.right
         return ans
+                
+                
