@@ -14,6 +14,6 @@ class Solution:
             return False
         if root.val == targetSum and not root.left and not root.right:
             return True
-        l = self.helper(root.left, targetSum-root.val)
-        r = self.helper(root.right, targetSum-root.val)
+        l = self.helper(root.left, targetSum - root.val)
+        r = self.helper(root.right, targetSum - root.val)
         return l or r
