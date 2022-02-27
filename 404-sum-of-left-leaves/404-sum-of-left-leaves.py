@@ -8,7 +8,9 @@ class Solution:
     def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
+        l = self.sumOfLeftLeaves(root.left)
+        r = self.sumOfLeftLeaves(root.right)
         ans = 0
         if root.left and not root.left.left and not root.left.right:
-            ans += root.left.val
-        return ans + self.sumOfLeftLeaves(root.left) + self.sumOfLeftLeaves(root.right)
+            ans += root.left.val;
+        return ans + l + r
