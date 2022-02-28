@@ -18,4 +18,3 @@ class Solution:
             if c.right:
                 s.append(c.right)
         return ans[::-1]
-        
