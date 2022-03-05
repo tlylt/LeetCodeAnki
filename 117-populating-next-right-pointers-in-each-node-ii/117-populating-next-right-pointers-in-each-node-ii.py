@@ -17,13 +17,12 @@ class Solution:
             l = len(q)
             prev = None
             for i in range(l):
-                curr = q.popleft()
+                c = q.popleft()
                 if prev:
-                    prev.next = curr
-                prev = curr
-                if curr.left:
-                    q.append(curr.left)
-                if curr.right:
-                    q.append(curr.right)
+                    prev.next = c
+                prev = c
+                if c.left:
+                    q.append(c.left)
+                if c.right:
+                    q.append(c.right)
         return root
-        
