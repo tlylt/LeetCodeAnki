@@ -10,9 +10,8 @@ class Solution:
             return None
         root_val = preorder[0]
         preorder = preorder[1:]
-        root = TreeNode(root_val)
-        
-        index = inorder.index(root_val)
-        root.left = self.buildTree(preorder[:len(inorder[:index])], inorder[:index])
-        root.right = self.buildTree(preorder[len(inorder[:index]):], inorder[index+1:])
+        root = TreeNode(val=root_val)
+        idx = inorder.index(root_val)
+        root.left = self.buildTree(preorder[:len(inorder[:idx])], inorder[:idx])
+        root.right = self.buildTree(preorder[len(inorder[:idx]):], inorder[idx+1:])
         return root
