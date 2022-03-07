@@ -1,8 +1,9 @@
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
-        if sum(nums) % 2 == 1:
+        total = sum(nums)
+        if total % 2 == 1:
             return False
-        half = sum(nums)//2
+        half = total//2
         dp = [0] * (half + 1)
         for i in range(len(nums)):
             for j in range(half, nums[i]-1, -1):
