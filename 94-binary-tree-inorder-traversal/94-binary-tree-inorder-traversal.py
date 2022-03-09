@@ -10,14 +10,13 @@ class Solution:
             return []
         s = []
         ans = []
-        c = root
-        while c or s:
-            if c:
-                s.append(c)
-                c = c.left
-            else:
-                c = s.pop()
-                ans.append(c.val)
-                c = c.right
+        curr = root
+        while s or curr:
+            while curr:
+                s.append(curr)
+                curr = curr.left
+            if s:
+                curr = s.pop()
+                ans.append(curr.val)
+                curr = curr.right
         return ans
-                
