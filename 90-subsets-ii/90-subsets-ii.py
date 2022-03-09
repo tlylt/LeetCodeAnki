@@ -5,7 +5,7 @@ class Solution:
         path = []
         def backtrack(nums, startIdx):
             result.append(path[:])
-            if startIdx >= len(nums):
+            if len(path) >= len(nums):
                 return
             for i in range(startIdx, len(nums)):
                 if i > startIdx and nums[i] == nums[i-1]:
