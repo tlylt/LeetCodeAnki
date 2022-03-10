@@ -21,4 +21,5 @@ Books/Guides/Tools that I understand to be good and will take a closer look if n
 
 # Rewards & Motivation
 - [x] Jan 2022
-- [ ] Feb 2022
+- [x] Feb 2022
+- [ ] March 2022
