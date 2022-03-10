@@ -14,10 +14,11 @@ class Solution:
         rc = 0
         while l:
             l = l.left
-            lc+=1
+            lc += 1
         while r:
             r = r.right
-            rc+=1
+            rc += 1
         if lc == rc:
-            return 2**(lc+1) -1
+            return 2**(lc+1) - 1
         return 1 + self.countNodes(root.left) + self.countNodes(root.right)
+        
