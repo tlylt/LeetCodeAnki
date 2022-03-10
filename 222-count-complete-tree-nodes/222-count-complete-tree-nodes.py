@@ -10,8 +10,8 @@ class Solution:
             return 0
         l = root.left
         r = root.right
-        lc = 0
-        rc = 0
+        lc = 1
+        rc = 1
         while l:
             l = l.left
             lc += 1
@@ -19,6 +19,6 @@ class Solution:
             r = r.right
             rc += 1
         if lc == rc:
-            return 2**(lc+1) - 1
-        return 1 + self.countNodes(root.left) + self.countNodes(root.right)
-        
+            return 2**(lc) - 1
+        else:
+            return 1 + self.countNodes(root.left) + self.countNodes(root.right)
