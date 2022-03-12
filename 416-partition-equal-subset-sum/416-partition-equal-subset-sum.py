@@ -10,4 +10,3 @@ class Solution:
             for j in range(target, nums[i]-1, -1):
                 dp[j] = max(dp[j], dp[j-nums[i]] + nums[i])
         return dp[-1] == target
-        
