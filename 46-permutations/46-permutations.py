@@ -4,7 +4,7 @@ class Solution:
         path = []
         used = [0] * len(nums)
         def backtrack(nums):
-            if len(path) == len(nums):
+            if len(path) >= len(nums):
                 result.append(path[:])
                 return
             for i in range(len(nums)):
