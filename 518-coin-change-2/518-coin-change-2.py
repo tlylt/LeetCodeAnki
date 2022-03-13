@@ -5,4 +5,4 @@ class Solution:
         for i in range(len(coins)):
             for j in range(coins[i], amount+1):
                 dp[j] += dp[j-coins[i]]
-        return dp[-1]
+        return dp[amount]
