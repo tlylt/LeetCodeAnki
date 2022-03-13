@@ -7,7 +7,7 @@ class Solution:
         return ans
     def findMaxForm(self, strs: List[str], m: int, n: int) -> int:
         dp = [[0 for i in range(n+1)] for j in range(m+1)]
-        for s in strs: # iterate on items first
+        for s in strs:
             zero = self.count(s, '0')
             one = self.count(s, '1')
             for i in range(m, zero-1, -1):
