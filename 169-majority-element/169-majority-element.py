@@ -4,13 +4,14 @@ class Solution:
     def helper(self, nums, l, r):
         if l == r:
             return nums[l]
-        mid = (r+l) // 2
-        l_maj = self.helper(nums, l, mid)
-        r_maj = self.helper(nums, mid+1, r)
-        if l_maj == r_maj:
-            return l_maj
-        count_l = sum([1 for i in range(l, r+1) if nums[i] == l_maj])
-        count_r = sum([1 for i in range(l, r+1) if nums[i] == r_maj])
-        if count_l > count_r:
-            return l_maj
-        return r_maj
+        mid = (l+r)//2
+        lm = self.helper(nums, l, mid)
+        rm = self.helper(nums, mid+1, r)
+        if lm == rm:
+            return lm
+        lc = sum(1 for i in nums[l:r+1] if i == lm)
+        rc = sum(1 for i in nums[l:r+1] if i == rm)
+        if lc > rc:
+            return lm
+        else:
+            return rm
