@@ -1,5 +1,5 @@
         # sumPos + sumNeg = total
-        # sumPos - (sumNeg) = bagSize
+        # sumPos - (sumNeg) = target
         # sumNeg = total - sumPos
         # sumPos - (total - sumPos) = target
         # sumPos = (target + total) / 2
@@ -9,12 +9,13 @@ class Solution:
         total = sum(nums)
         if (total + target) % 2 == 1:
             return 0
-        if (abs(target) > total):
+        if abs(target) > total:
             return 0
-        bagSize = (total + target) // 2
-        dp = [0] * (bagSize+1)
+        bagSize = (target + total) // 2
+        dp = [0] * (bagSize + 1)
         dp[0] = 1
         for i in range(len(nums)):
-            for j in range(bagSize, nums[i]-1,-1):
+            for j in range(bagSize, nums[i]-1, -1):
                 dp[j] += dp[j-nums[i]]
         return dp[bagSize]
+        
