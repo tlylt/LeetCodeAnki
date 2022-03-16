@@ -6,23 +6,23 @@
 #         self.right = right
 class Solution:
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> List[List[int]]:
-        ans = []
-        temp = []
-        def helper(node, targetSum):
-            if not node:
+        result = []
+        path = []
+        def backtrack(root, targetSum):
+            if not root:
                 return
-            if node.val == targetSum and not node.left and not node.right:
-                temp.append(node.val)
-                ans.append(temp[:])
-                temp.pop()
+            if root.val == targetSum and not root.left and not root.right:
+                path.append(root.val)
+                result.append(path[:])
+                path.pop()
                 return
-            if node.left:
-                temp.append(node.val)
-                helper(node.left, targetSum-node.val)
-                temp.pop()
-            if node.right:
-                temp.append(node.val)
-                helper(node.right, targetSum-node.val)
-                temp.pop()
-        helper(root, targetSum)
-        return ans
+            if root.left:
+                path.append(root.val)
+                backtrack(root.left, targetSum-root.val)
+                path.pop()
+            if root.right:
+                path.append(root.val)
+                backtrack(root.right, targetSum-root.val)
+                path.pop()
+        backtrack(root, targetSum)
+        return result
