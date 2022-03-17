@@ -6,10 +6,9 @@ class Solution:
             if len(path) == k:
                 result.append(path[:])
                 return
-            for i in range(startIdx, n-(k-len(path))+2):
+            for i in range(startIdx, n+1):
                 path.append(i)
                 backtrack(n, k, i+1)
                 path.pop()
         backtrack(n, k, 1)
         return result
-                
