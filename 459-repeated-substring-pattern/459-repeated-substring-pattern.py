@@ -10,7 +10,7 @@ class Solution:
         for r in range(1, len(s)):
             while l > 0 and s[l] != s[r]:
                 l = ans[l-1]
-            if s[l] == s[r]:
+            if s[r] == s[l]:
                 ans[r] = l+1
                 l += 1
         return ans
