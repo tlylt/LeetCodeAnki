@@ -8,9 +8,9 @@ class Solution:
         dummy = ListNode()
         dummy.next = head
         if not head:
-            return head
-        prev = dummy
+            return
         curr = head
+        prev = dummy
         while curr and curr.next:
             temp = curr.next.next
             curr.next.next = curr
