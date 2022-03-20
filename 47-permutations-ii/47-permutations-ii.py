@@ -13,11 +13,10 @@ class Solution:
                     continue
                 if i > 0 and nums[i] == nums[i-1] and used[i-1] == 0:
                     continue
-                used[i] = 1
                 path.append(nums[i])
+                used[i] = 1
                 backtrack(nums)
-                path.pop()
                 used[i] = 0
+                path.pop()
         backtrack(nums)
         return result
-                    
