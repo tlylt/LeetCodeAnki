@@ -19,6 +19,5 @@ class Solution:
             r = r.right
             rc += 1
         if lc == rc:
-            return 2**lc -1
-        else:
-            return 1 + self.countNodes(root.left) + self.countNodes(root.right)
+            return 2**(lc) - 1
+        return 1 + self.countNodes(root.left) + self.countNodes(root.right)
