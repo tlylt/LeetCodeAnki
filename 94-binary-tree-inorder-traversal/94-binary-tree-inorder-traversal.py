@@ -9,13 +9,13 @@ class Solution:
         if not root:
             return []
         s = []
-        ans = []
         curr = root
-        while s or curr:
-            while curr:
+        ans = []
+        while curr or s:
+            if curr:
                 s.append(curr)
                 curr = curr.left
-            if s:
+            else:
                 curr = s.pop()
                 ans.append(curr.val)
                 curr = curr.right
