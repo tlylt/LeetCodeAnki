@@ -11,8 +11,8 @@ class Solution:
             return 0
         if abs(target) > total:
             return 0
-        bagSize = (total + target) // 2
-        dp = [0] * (bagSize+1)
+        bagSize = (target + total) // 2
+        dp = [0] * (bagSize + 1)
         dp[0] = 1
         for i in range(len(nums)):
             for j in range(bagSize, nums[i]-1, -1):
