@@ -1,11 +1,9 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         result = []
-        path = []
+        path =[]
         def backtrack(nums, startIdx):
             result.append(path[:])
-            if len(path) >= len(nums):
-                return
             for i in range(startIdx, len(nums)):
                 path.append(nums[i])
                 backtrack(nums, i+1)
