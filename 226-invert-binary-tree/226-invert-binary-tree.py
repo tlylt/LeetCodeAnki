@@ -13,10 +13,9 @@ class Solution:
             l = len(q)
             for i in range(l):
                 c = q.popleft()
-                c.left, c.right = c.right, c.left
                 if c.left:
                     q.append(c.left)
                 if c.right:
                     q.append(c.right)
+                c.left, c.right = c.right, c.left
         return root
-        
