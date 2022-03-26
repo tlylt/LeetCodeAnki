@@ -1,10 +1,10 @@
 class Solution:
     def partitionLabels(self, s: str) -> List[int]:
-        r = 0
         h = {}
         for i in range(len(s)):
             h[s[i]] = i
         l = 0
+        r = 0
         ans = []
         for i in range(len(s)):
             r = max(r, h[s[i]])
