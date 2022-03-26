@@ -1,4 +1,6 @@
 class Solution:
+    def check(self, s):
+        return s == s[::-1]
     def partition(self, s: str) -> List[List[str]]:
         result = []
         path = []
@@ -12,5 +14,4 @@ class Solution:
                     path.pop()
         backtrack(s, 0)
         return result
-    def check(self, s):
-        return s == s[::-1]
+            
