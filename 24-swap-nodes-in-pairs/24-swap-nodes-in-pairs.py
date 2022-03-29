@@ -15,5 +15,5 @@ class Solution:
             curr.next.next = curr
             curr.next = temp
             prev = curr
-            curr = curr.next
+            curr = temp
         return dummy.next
