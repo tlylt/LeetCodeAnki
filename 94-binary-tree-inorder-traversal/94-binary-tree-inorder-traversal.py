@@ -9,12 +9,11 @@ class Solution:
         ans = []
         self.helper(root, ans)
         return ans
-    def helper(self, root, ans):
-        if not root:
+    def helper(self, node, ans):
+        if not node:
             return
-        if root.left:
-            self.helper(root.left, ans)
-        ans.append(root.val)
-        if root.right:
-            self.helper(root.right, ans)
-            
+        if node.left:
+            self.helper(node.left, ans)
+        ans.append(node.val)
+        if node.right:
+            self.helper(node.right, ans)
