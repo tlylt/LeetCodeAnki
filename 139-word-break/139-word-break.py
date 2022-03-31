@@ -6,4 +6,4 @@ class Solution:
             for w in wordDict:
                 if i >= len(w):
                     dp[i] = dp[i] or (dp[i-len(w)] and s[i-len(w):i] == w)
-        return dp[-1]
+        return dp[len(s)]
