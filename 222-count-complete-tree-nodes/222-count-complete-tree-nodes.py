@@ -13,11 +13,12 @@ class Solution:
         lc = 1
         rc = 1
         while l:
-            l = l.left
             lc += 1
+            l = l.left
         while r:
-            r = r.right
             rc += 1
+            r = r.right
         if lc == rc:
             return 2**(lc) - 1
-        return 1 + self.countNodes(root.left) + self.countNodes(root.right)
+        else:
+            return 1 + self.countNodes(root.left) + self.countNodes(root.right)
