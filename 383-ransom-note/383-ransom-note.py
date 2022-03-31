@@ -1,13 +1,10 @@
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        if len(ransomNote) > len(magazine):
-            return False
-        h = {}
+        h = [0] * 26
         for i in magazine:
-            h[i] = h.get(i, 0) + 1
-        
+            h[ord(i)-ord('a')] = h[ord(i)-ord('a')] + 1
         for j in ransomNote:
-            if j not in h or h[j] == 0:
+            if h[ord(j)-ord('a')] <= 0:
                 return False
-            h[j] -= 1
+            h[ord(j)-ord('a')] -= 1
         return True
