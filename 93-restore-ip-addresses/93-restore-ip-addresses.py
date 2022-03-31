@@ -9,21 +9,15 @@ class Solution:
         return True
     def restoreIpAddresses(self, s: str) -> List[str]:
         result = []
-        path = []
         def backtrack(s, startIdx, points):
             if points == 3 and self.check(s, startIdx, len(s)-1):
-                path.append(s[startIdx:])
-                result.append("".join(path))
-                path.pop()
-                return
-            if points >= 3:
+                result.append(s)
+            if points > 3:
                 return
             for i in range(startIdx, len(s)):
                 if self.check(s, startIdx, i):
-                    path.append(s[startIdx:i+1] + '.')
                     s = s[:i+1] + '.' + s[i+1:]
                     backtrack(s, i+2, points+1)
                     s = s[:i+1] + s[i+2:]
-                    path.pop()
         backtrack(s, 0, 0)
         return result
