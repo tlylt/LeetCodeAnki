@@ -15,4 +15,6 @@ class Solution:
             return 0
         if len(nums) == 1:
             return nums[0]
-        return max(self.helper(nums[1:]), self.helper(nums[:-1]))
+        a = self.helper(nums[1:])
+        b = self.helper(nums[:-1])
+        return max(a, b)
