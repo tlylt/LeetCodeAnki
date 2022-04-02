@@ -12,7 +12,6 @@ class Solution:
         def backtrack(s, startIdx, points):
             if points == 3 and self.check(s, startIdx, len(s)-1):
                 result.append(s)
-            if points > 3:
                 return
             for i in range(startIdx, len(s)):
                 if self.check(s, startIdx, i):
