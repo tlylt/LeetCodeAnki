@@ -7,5 +7,5 @@ class Solution:
             if temp > ans:
                 ans = temp
             if temp < 0:
-                temp = 0
+                temp = 0 # restart
         return ans
