@@ -4,8 +4,7 @@ class Solution:
         temp = 0
         for i in range(len(nums)):
             temp += nums[i]
-            if temp > ans:
-                ans = temp
+            ans = max(ans, temp)
             if temp < 0:
-                temp = 0 # restart
+                temp = 0
         return ans
