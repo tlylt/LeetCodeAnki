@@ -8,7 +8,7 @@ class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
         total = sum(nums)
         bagSize = (total + target) // 2
-        if (total + target) %2 == 1:
+        if (total + target) % 2 == 1:
             return 0
         if abs(target) > total:
             return 0
