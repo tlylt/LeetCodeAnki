@@ -7,7 +7,7 @@
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         ans = self.helper(root)
-        return False if ans == -1 else True
+        return True if ans != -1 else False
     def helper(self, root):
         if not root:
             return 0
@@ -17,6 +17,8 @@ class Solution:
             return -1
         if r == -1:
             return -1
-        if abs(l-r) > 1 :
+        if abs(l-r) > 1:
             return -1
-        return max(l, r) + 1
+        else:
+            return 1 + max(l, r)
+        
