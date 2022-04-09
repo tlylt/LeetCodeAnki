@@ -14,9 +14,9 @@ class MyQueue:
             self.s2.append(self.s1.pop())
         return self.s2.pop()
     def peek(self) -> int:
-        if self.s2:
-            return self.s2[-1]
-        return self.s1[0]
+        temp = self.pop()
+        self.s2.append(temp)
+        return temp
     def empty(self) -> bool:
         return not self.s1 and not self.s2
 
