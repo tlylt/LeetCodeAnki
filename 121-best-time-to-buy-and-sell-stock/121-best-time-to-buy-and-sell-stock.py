@@ -3,6 +3,6 @@ class Solution:
         low = prices[0]
         ans = 0
         for i in range(len(prices)):
-            low = min(low, prices[i])
+            low = min(prices[i], low)
             ans = max(ans, prices[i] - low)
         return ans
