@@ -11,13 +11,13 @@ class Solution:
         result = []
         def backtrack(s, startIdx, points):
             if points == 3 and self.check(s, startIdx, len(s)-1):
-                result.append(s[:])
+                result.append(s)
                 return
             if points >= 3:
                 return
             for i in range(startIdx, len(s)):
                 if self.check(s, startIdx, i):
-                    s = s[:i+1] + '.' + s[i+1:]
+                    s =  s[:i+1] + '.' + s[i+1:]
                     backtrack(s, i+2, points+1)
                     s = s[:i+1] + s[i+2:]
         backtrack(s, 0, 0)
