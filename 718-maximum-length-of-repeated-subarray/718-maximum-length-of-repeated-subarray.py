@@ -2,7 +2,7 @@ class Solution:
     def findLength(self, nums1: List[int], nums2: List[int]) -> int:
         m = len(nums1)
         n = len(nums2)
-        dp = [0] * (m+1)
+        dp =[0] * (m+1)
         result = 0
         for i in range(1, n+1):
             for j in range(m, 0, -1):
