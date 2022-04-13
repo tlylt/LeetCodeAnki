@@ -8,4 +8,4 @@ class Solution:
                 else:
                     dp[i][j] = dp[i][j-1]
         return dp[len(s)][len(t)] == len(s)
-              
+                
