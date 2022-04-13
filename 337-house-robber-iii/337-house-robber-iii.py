@@ -10,9 +10,9 @@ class Solution:
         return max(ans[0], ans[1])
     def helper(self, root):
         if not root:
-            return 0, 0 # rob, don't rob
+            return 0, 0
         l = self.helper(root.left)
         r = self.helper(root.right)
-        val1 = root.val + l[1] + r[1] # rob root
-        val2 = max(l[0], l[1]) + max(r[0], r[1]) # don't rob root
-        return val1, val2
+        rob = root.val + l[1] + r[1]
+        dontRob = max(l[0], l[1]) + max(r[0], r[1])
+        return rob, dontRob
