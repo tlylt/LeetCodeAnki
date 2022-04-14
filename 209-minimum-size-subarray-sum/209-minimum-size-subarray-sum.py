@@ -10,3 +10,4 @@ class Solution:
                 temp -= nums[l]
                 l += 1
         return ans if ans != float('inf') else 0
+                
