@@ -8,10 +8,9 @@ class Solution:
                 return
             if len(path) >= k or sum(path) >= n:
                 return
-            for i in range(startIdx, 10 - (k-len(path)) + 1):
+            for i in range(startIdx, 9 + 1 - (k-len(path)) + 1):
                 path.append(i)
                 backtrack(k, n, i+1)
                 path.pop()
         backtrack(k, n, 1)
         return result
-        
