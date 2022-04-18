@@ -6,5 +6,5 @@ class Solution:
                 ans[i] = ans[i-1] + 1
         for j in range(len(ratings)-2, -1, -1):
             if ratings[j] > ratings[j+1]:
-                ans[j] = max(ans[j+1]+1, ans[j])
+                ans[j] = max(ans[j], ans[j+1] + 1)
         return sum(ans)
