@@ -13,10 +13,11 @@ class Solution:
         while q:
             l = len(q)
             for i in range(l):
-                c = q.popleft()
-                if c.left:
-                    q.append(c.left)
-                if c.right:
-                    q.append(c.right)
-            ans+=1
+                curr = q.popleft()
+                if curr.left:
+                    q.append(curr.left)
+                if curr.right:
+                    q.append(curr.right)
+            ans += 1
+        
         return ans
