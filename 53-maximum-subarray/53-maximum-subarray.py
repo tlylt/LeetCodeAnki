@@ -1,7 +1,5 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        if len(nums) == 0:
-            return 0
         ans = float('-inf')
         temp = 0
         for i in range(len(nums)):
@@ -10,4 +8,4 @@ class Solution:
                 ans = temp
             if temp < 0:
                 temp = 0
-        return ans
+        return ans if ans != float('-inf') else 0
