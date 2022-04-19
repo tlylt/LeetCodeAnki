@@ -10,15 +10,15 @@ class Solution:
             return 0
         l = root.left
         r = root.right
-        lc = 1
-        rc = 1
+        lc = 0
+        rc = 0
         while l:
-            lc += 1
             l = l.left
+            lc += 1
         while r:
-            rc += 1
             r = r.right
+            rc += 1
         if lc == rc:
-            return 2**(lc) - 1
+            return 2**(lc+1) - 1
         else:
             return 1 + self.countNodes(root.left) + self.countNodes(root.right)
