@@ -7,4 +7,4 @@ class Solution:
                     dp[i][j] = dp[i-1][j-1] + 1
                 else:
                     dp[i][j] = dp[i][j-1]
-        return dp[len(s)][len(t)] == len(s)                    
+        return dp[len(s)][len(t)] == len(s)
