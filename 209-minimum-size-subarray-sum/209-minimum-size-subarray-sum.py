@@ -3,10 +3,10 @@ class Solution:
         ans = float('inf')
         temp = 0
         l = 0
-        for r in range(len(nums)):
-            temp += nums[r]
+        for i in range(len(nums)):
+            temp += nums[i]
             while temp >= target:
-                ans = min(ans, r-l+1)
+                ans = min(ans, i-l+1)
                 temp -= nums[l]
                 l += 1
         return ans if ans != float('inf') else 0
