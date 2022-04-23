@@ -6,12 +6,14 @@
 #         self.right = right
 class Solution:
     def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
-        depth = 0
+        if not root:
+            return None
         ans = 0
+        depth = 0
         def backtrack(root, curr):
+            nonlocal ans, depth
             if not root:
                 return
-            nonlocal depth, ans
             if curr > depth:
                 depth = curr
                 ans = root.val
