@@ -6,13 +6,13 @@
 #         self.right = right
 class Solution:
     def rob(self, root: Optional[TreeNode]) -> int:
-        ans = self.helper(root)
-        return max(ans[0], ans[1])
+        rob, dontRob = self.helper(root)
+        return max(rob, dontRob)
     def helper(self, root):
         if not root:
-            return 0, 0 # rob, dont rob
+            return 0, 0
         l = self.helper(root.left)
         r = self.helper(root.right)
-        rob = root.val + l[1] + r[1]
-        dont_rob = max(l[0], l[1]) + max(r[0], r[1])
-        return rob, dont_rob
+        robV = root.val + l[1] + r[1]
+        dontRobV = max(l[0], l[1]) + max(r[0], r[1])
+        return robV, dontRobV
