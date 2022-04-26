@@ -6,8 +6,8 @@ class Solution:
                 five += 1
             elif b == 10:
                 if five > 0:
-                    ten += 1
                     five -= 1
+                    ten += 1
                 else:
                     return False
             else:
