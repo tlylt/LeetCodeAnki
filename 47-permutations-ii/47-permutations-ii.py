@@ -1,7 +1,7 @@
 class Solution:
     def permuteUnique(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
-        result =[]
+        result = []
         path = []
         used = [0] * len(nums)
         def backtrack(nums):
