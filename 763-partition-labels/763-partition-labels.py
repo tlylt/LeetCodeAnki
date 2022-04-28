@@ -6,9 +6,9 @@ class Solution:
             h[s[i]] = i
         l = 0
         ans = []
-        for i in range(len(s)):
-            cover = max(cover,h[s[i]])
-            if cover == i:
-                ans.append(i-l+1)
-                l = i + 1
+        for r in range(len(s)):
+            cover = max(cover, h[s[r]])
+            if cover == r:
+                ans.append(r-l+1)
+                l = r + 1
         return ans
