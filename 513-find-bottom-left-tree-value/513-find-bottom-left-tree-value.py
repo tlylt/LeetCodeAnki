@@ -6,8 +6,6 @@
 #         self.right = right
 class Solution:
     def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
-        if not root:
-            return None
         ans = 0
         depth = 0
         def backtrack(root, curr):
