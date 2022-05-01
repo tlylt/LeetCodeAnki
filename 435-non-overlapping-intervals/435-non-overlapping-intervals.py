@@ -3,6 +3,6 @@ class Solution:
         intervals.sort(key=lambda x: x[1])
         ans = [intervals[0]]
         for i in range(1, len(intervals)):
-            if ans[-1][1] <= intervals[i][0]:
+            if intervals[i][0] >= ans[-1][1]:
                 ans.append(intervals[i])
         return len(intervals) - len(ans)
