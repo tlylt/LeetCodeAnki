@@ -1,9 +1,9 @@
 class Solution:
     def partitionLabels(self, s: str) -> List[int]:
-        cover = 0
         h = {}
         for i in range(len(s)):
             h[s[i]] = i
+        cover = 0
         l = 0
         ans = []
         for r in range(len(s)):
