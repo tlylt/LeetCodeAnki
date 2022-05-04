@@ -1,27 +1,26 @@
 class Q:
     def __init__(self):
-        self.s = deque()
+        self.q = deque()
+    def add(self, num):
+        while self.q and self.q[-1] < num:
+            self.q.pop()
+        self.q.append(num)
+    def pop(self, num):
+        if self.q[0] == num:
+            self.q.popleft()
     def top(self):
-        return self.s[0]
-    def push(self, val):
-        while self.s and self.s[-1] < val:
-            self.s.pop()
-        self.s.append(val)
-    def pop(self, val):
-        if self.s and self.s[0] == val:
-            self.s.popleft()
-
+        return self.q[0]
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         q = Q()
         for i in range(k):
-            q.push(nums[i])
+            q.add(nums[i])
         ans = []
         ans.append(q.top())
         l = 0
-        for r in range(k, len(nums)):
+        for i in range(k, len(nums)):
+            q.add(nums[i])
             q.pop(nums[l])
-            q.push(nums[r])
-            ans.append(q.top())
             l += 1
+            ans.append(q.top())
         return ans
