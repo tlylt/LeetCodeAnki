@@ -6,6 +6,8 @@
 #         self.right = right
 class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
+        return self.helper(root, 0)
+    def helper(self, root, depth):
         if not root:
             return 0
         q = deque([root])
@@ -20,5 +22,5 @@ class Solution:
                     q.append(c.left)
                 if c.right:
                     q.append(c.right)
-            ans+=1
+            ans += 1
         return ans
