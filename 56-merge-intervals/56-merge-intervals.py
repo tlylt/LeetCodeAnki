@@ -8,3 +8,4 @@ class Solution:
             else:
                 ans.append(intervals[i])
         return ans
+        
