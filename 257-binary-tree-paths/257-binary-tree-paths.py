@@ -16,11 +16,14 @@ class Solution:
                 result.append("->".join(path))
                 path.pop()
                 return
-            path.append(str(root.val))
             if root.left:
+                path.append(str(root.val))
                 backtrack(root.left)
+                path.pop()
             if root.right:
+                path.append(str(root.val))
                 backtrack(root.right)
-            path.pop()
+                path.pop()
         backtrack(root)
         return result
+            
