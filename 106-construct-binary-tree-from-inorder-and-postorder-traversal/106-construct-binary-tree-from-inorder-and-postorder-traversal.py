@@ -11,8 +11,6 @@ class Solution:
         rootVal = postorder.pop()
         root = TreeNode(val=rootVal)
         index = inorder.index(rootVal)
-        
-        root.left = self.buildTree(inorder[:index], postorder[:len(inorder[:index])])
-        root.right = self.buildTree(inorder[index+1:], postorder[len(inorder[:index]):])
+        root.left = self.buildTree(inorder[:index], postorder[:(len(inorder[:index]))])
+        root.right = self.buildTree(inorder[index+1:], postorder[(len(inorder[:index])):])
         return root
-        
