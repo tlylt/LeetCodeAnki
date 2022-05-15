@@ -7,9 +7,9 @@
 class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
         ans = 0
+        q = deque([root])
         if not root:
             return 0
-        q = deque([root])
         while q:
             l = len(q)
             for i in range(l):
