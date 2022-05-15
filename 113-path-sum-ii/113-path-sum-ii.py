@@ -8,7 +8,7 @@ class Solution:
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> List[List[int]]:
         result = []
         path = []
-        def backtrack(root, targetSum):
+        def helper(root, targetSum):
             if not root:
                 return
             if root.val == targetSum and not root.left and not root.right:
@@ -16,13 +16,11 @@ class Solution:
                 result.append(path[:])
                 path.pop()
                 return
-            if root.left:
-                path.append(root.val)
-                backtrack(root.left, targetSum-root.val)
-                path.pop()
-            if root.right:
-                path.append(root.val)
-                backtrack(root.right, targetSum-root.val)
-                path.pop()
-        backtrack(root, targetSum)
+            path.append(root.val)
+            helper(root.left, targetSum - root.val)
+            path.pop()
+            path.append(root.val)
+            helper(root.right, targetSum - root.val)
+            path.pop()
+        helper(root, targetSum)
         return result
