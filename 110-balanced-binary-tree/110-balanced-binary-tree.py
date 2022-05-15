@@ -17,6 +17,6 @@ class Solution:
             return -1
         if r == -1:
             return -1
-        if abs(l-r) > 1:
+        if abs(r - l) > 1:
             return -1
         return 1 + max(l, r)
