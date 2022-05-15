@@ -1,9 +1,9 @@
 class Solution:
     def permuteUnique(self, nums: List[int]) -> List[List[int]]:
-        nums.sort()
         result = []
         path = []
-        used = [0] * len(nums)
+        used =  [0] * len(nums)
+        nums.sort()
         def backtrack(nums):
             if len(path) == len(nums):
                 result.append(path[:])
@@ -11,7 +11,7 @@ class Solution:
             for i in range(len(nums)):
                 if used[i]:
                     continue
-                if i > 0 and nums[i] == nums[i-1] and used[i-1] == 1:
+                if i > 0 and nums[i] == nums[i-1] and used[i-1]:
                     continue
                 used[i] = 1
                 path.append(nums[i])
