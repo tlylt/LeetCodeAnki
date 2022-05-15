@@ -9,8 +9,6 @@ class Solution:
         result = []
         path = []
         def backtrack(root):
-            if not root:
-                return
             if not root.left and not root.right:
                 path.append(str(root.val))
                 result.append("->".join(path))
@@ -26,4 +24,4 @@ class Solution:
                 path.pop()
         backtrack(root)
         return result
-            
+        
