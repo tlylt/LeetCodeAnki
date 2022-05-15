@@ -7,6 +7,6 @@ class Solution:
             if s > n:
                 break
             for j in range(1, n+1):
-                if s <= j:
+                if j >= s:
                     dp[j] = min(dp[j], dp[j-s]+1)
         return dp[n]
