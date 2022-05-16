@@ -7,17 +7,16 @@
 class Solution:
     def levelOrderBottom(self, root: Optional[TreeNode]) -> List[List[int]]:
         result = []
-        if not root:
-            return []
-        def helper(node, depth):
-            if depth == len(result):
+        depth = -1
+        def backtrack(root, curr):
+            nonlocal depth
+            if not root:
+                return
+            if curr > depth:
                 result.append([])
-            if node:
-                result[depth].append(node.val)
-                if node.left:
-                    helper(node.left, depth+1)
-                if node.right:
-                    helper(node.right, depth+1)
-        helper(root, 0)
+                depth = curr
+            result[curr].append(root.val)
+            backtrack(root.left, curr+1)
+            backtrack(root.right, curr+1)
+        backtrack(root, 0)
         return result[::-1]
-            
