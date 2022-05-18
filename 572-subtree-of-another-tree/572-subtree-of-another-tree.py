@@ -8,16 +8,7 @@ class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
         if not root and subRoot:
             return False
-        stack = [root]
-        while stack:
-            c = stack.pop()
-            if self.helper(c, subRoot):
-                return True
-            if c.left:
-                stack.append(c.left)
-            if c.right:
-                stack.append(c.right)
-        return False
+        return self.helper(root, subRoot) or self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
     def helper(self, a, b):
         if not a and not b:
             return True
