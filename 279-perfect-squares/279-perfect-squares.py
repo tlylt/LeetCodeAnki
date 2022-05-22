@@ -7,5 +7,5 @@ class Solution:
             if s > n:
                 break
             for j in range(s, n+1):
-                dp[j] = min(dp[j], dp[j-s] + 1)
+                dp[j] = min(dp[j], dp[j-s]+1)
         return dp[n]
