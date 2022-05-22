@@ -1,15 +1,21 @@
 import heapq # min heap
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        ans = []
         h = {}
         for i in range(len(nums)):
             h[nums[i]] = h.get(nums[i], 0) + 1
+        buckets = [[] for i in range(len(nums)+1)]
         for ke, va in h.items():
-            heapq.heappush(ans, (va, ke))
-        for i in range(len(ans) - k):
-            heapq.heappop(ans)
-        result = []
-        for i in ans:
-            result.append(i[1])
-        return result
+            buckets[va].append(ke)
+        ans = []
+        curr = len(nums)
+        while k:
+            while len(buckets[curr]) == 0:
+                curr -= 1
+            for i in range(len(buckets[curr])):
+                ans.append(buckets[curr][i])
+                k -= 1
+            curr -= 1
+        return ans
+            
+            
