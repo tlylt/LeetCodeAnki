@@ -9,19 +9,18 @@ class Solution:
         result = []
         path = []
         def backtrack(root):
+            if not root:
+                return
             if not root.left and not root.right:
                 path.append(str(root.val))
                 result.append("->".join(path))
                 path.pop()
                 return
-            if root.left:
-                path.append(str(root.val))
-                backtrack(root.left)
-                path.pop()
-            if root.right:
-                path.append(str(root.val))
-                backtrack(root.right)
-                path.pop()
+            path.append(str(root.val))
+            backtrack(root.left)
+            path.pop()
+            path.append(str(root.val))
+            backtrack(root.right)
+            path.pop()
         backtrack(root)
         return result
-        
