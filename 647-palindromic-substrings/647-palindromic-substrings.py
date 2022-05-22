@@ -12,4 +12,3 @@ class Solution:
                         dp[i][j] = True
                         ans += 1
         return ans
-        
