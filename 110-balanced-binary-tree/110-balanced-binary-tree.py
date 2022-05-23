@@ -11,12 +11,12 @@ class Solution:
     def helper(self, root):
         if not root:
             return 0
-        l = self.helper(root.left)
-        r = self.helper(root.right)
-        if l == -1:
+        ls = self.helper(root.left)
+        rs = self.helper(root.right)
+        if ls == -1:
             return -1
-        if r == -1:
+        if rs == -1:
             return -1
-        if abs(r - l) > 1:
+        if abs(rs-ls) > 1:
             return -1
-        return 1 + max(l, r)
+        return 1 + max(ls, rs)
