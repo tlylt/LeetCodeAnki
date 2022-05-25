@@ -1,7 +1,5 @@
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        if needle == "":
-            return 0
         h = self.helper(needle)
         l = 0
         for r in range(len(haystack)):
@@ -19,6 +17,6 @@ class Solution:
             while l > 0 and s[l] != s[r]:
                 l = h[l-1]
             if s[l] == s[r]:
-                h[r] = l+1
-                l += 1
+                h[r] = l + 1
+                l = l + 1
         return h
