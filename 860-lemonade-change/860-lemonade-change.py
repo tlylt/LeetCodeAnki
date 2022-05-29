@@ -4,17 +4,17 @@ class Solution:
         for b in bills:
             if b == 5:
                 five += 1
-            if b == 10:
-                if five > 0:
+            elif b == 10:
+                if five:
                     ten += 1
                     five -= 1
                 else:
                     return False
-            if b == 20:
-                if ten > 0 and five > 0:
+            else:
+                if ten and five:
                     ten -= 1
                     five -= 1
-                elif five > 2:
+                elif five >= 3:
                     five -= 3
                 else:
                     return False
