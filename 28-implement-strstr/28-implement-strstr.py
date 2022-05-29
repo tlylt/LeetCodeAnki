@@ -7,7 +7,7 @@ class Solution:
                 l = h[l-1]
             if haystack[r] == needle[l]:
                 l += 1
-            if l >= len(needle):
+            if len(needle) == l:
                 return r - l + 1
         return -1
     def helper(self, s):
@@ -17,6 +17,6 @@ class Solution:
             while l > 0 and s[l] != s[r]:
                 l = h[l-1]
             if s[l] == s[r]:
-                h[r] = l + 1
-                l = l + 1
+                h[r] = l+1
+                l += 1
         return h
