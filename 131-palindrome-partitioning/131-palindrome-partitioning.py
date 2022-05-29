@@ -9,8 +9,8 @@ class Solution:
                 result.append(path[:])
                 return
             for i in range(startIdx, len(s)):
-                if self.check(s[startIdx: i+1]):
-                    path.append(s[startIdx: i+1])
+                if self.check(s[startIdx:i+1]):
+                    path.append(s[startIdx:i+1])
                     backtrack(s, i+1)
                     path.pop()
         backtrack(s, 0)
