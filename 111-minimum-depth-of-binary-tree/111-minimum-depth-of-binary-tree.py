@@ -6,19 +6,19 @@
 #         self.right = right
 class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
-        ans = 0
-        q = deque([root])
         if not root:
             return 0
-        while q:
-            l = len(q)
+        s = deque([root])
+        temp = 0
+        while s:
+            l = len(s)
             for i in range(l):
-                c = q.popleft()
+                c = s.popleft()
                 if not c.left and not c.right:
-                    return ans + 1
+                    return temp + 1
                 if c.left:
-                    q.append(c.left)
+                    s.append(c.left)
                 if c.right:
-                    q.append(c.right)
-            ans += 1
-        return ans
+                    s.append(c.right)
+            temp += 1
+        return temp
