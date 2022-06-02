@@ -18,8 +18,7 @@ class Solution:
             for i in range(l):
                 c = q.popleft()
                 temp.append(c.val)
-                for j in c.children:
-                    if j:
-                        q.append(j)
+                for ch in c.children:
+                    q.append(ch)
             ans.append(temp)
         return ans
