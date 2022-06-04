@@ -5,7 +5,7 @@ class Solution:
         result = []
         path = []
         def backtrack(s, startIdx):
-            if startIdx == len(s):
+            if startIdx >= len(s):
                 result.append(path[:])
                 return
             for i in range(startIdx, len(s)):
