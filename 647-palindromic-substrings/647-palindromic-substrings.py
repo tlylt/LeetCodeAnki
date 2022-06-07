@@ -6,9 +6,9 @@ class Solution:
             for j in range(i, len(s)):
                 if s[i] == s[j]:
                     if abs(j-i) <= 1:
-                        dp[i][j] = True
                         ans += 1
+                        dp[i][j] = True
                     elif dp[i+1][j-1]:
-                        dp[i][j] = True
                         ans += 1
+                        dp[i][j] = True
         return ans
