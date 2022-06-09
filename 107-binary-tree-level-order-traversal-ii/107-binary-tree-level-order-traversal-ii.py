@@ -9,12 +9,12 @@ class Solution:
         result = []
         depth = -1
         def backtrack(root, curr):
-            nonlocal depth
+            nonlocal result, depth
             if not root:
                 return
             if curr > depth:
-                result.append([])
                 depth = curr
+                result.append([])
             result[curr].append(root.val)
             backtrack(root.left, curr+1)
             backtrack(root.right, curr+1)
