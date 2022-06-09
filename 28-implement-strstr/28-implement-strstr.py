@@ -1,14 +1,14 @@
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        h = self.helper(needle)
+        ref = self.helper(needle)
         l = 0
         for r in range(len(haystack)):
             while l > 0 and haystack[r] != needle[l]:
-                l = h[l-1]
+                l = ref[l-1]
             if haystack[r] == needle[l]:
                 l += 1
-            if len(needle) == l:
-                return r - l + 1
+            if l >= len(needle):
+                return r-l+1
         return -1
     def helper(self, s):
         h = [0] * len(s)
@@ -17,6 +17,6 @@ class Solution:
             while l > 0 and s[l] != s[r]:
                 l = h[l-1]
             if s[l] == s[r]:
-                h[r] = l+1
+                h[r] = l + 1
                 l += 1
-        return h
+        return  h
