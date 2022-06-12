@@ -3,13 +3,12 @@ class Solution:
         h = {}
         for i in range(len(s)):
             h[s[i]] = i
-        result = []
         l = 0
         r = 0
-        temp = 0
+        ans = []
         for i in range(len(s)):
-            r = max(h[s[i]], r)
+            r = max(r, h[s[i]])
             if r == i:
-                result.append(r-l+1)
+                ans.append(r-l+1)
                 l = r + 1
-        return result
+        return ans
