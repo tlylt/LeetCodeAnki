@@ -5,7 +5,7 @@ class Solution:
         for i in range(1, n+1):
             s = i * i
             if s > n:
-                break
+                continue
             for j in range(s, n+1):
                 dp[j] = min(dp[j], dp[j-s]+1)
         return dp[n]
