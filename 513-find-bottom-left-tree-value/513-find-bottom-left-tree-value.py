@@ -7,15 +7,15 @@
 class Solution:
     def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
         ans = 0
-        depth = 0
+        depth = -1
         def backtrack(root, curr):
             nonlocal ans, depth
             if not root:
                 return
-            if curr > depth:
+            if depth < curr:
                 depth = curr
                 ans = root.val
             backtrack(root.left, curr+1)
             backtrack(root.right, curr+1)
-        backtrack(root, 1)
+        backtrack(root, 0)
         return ans
