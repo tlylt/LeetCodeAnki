@@ -4,6 +4,10 @@ class Solution:
     def helper(self, nums, l, r, target):
         if l > r:
             return -1
+        if l == r:
+            if nums[l] == target:
+                return l
+            return -1
         mid = (l+r) // 2
         if nums[mid] == target:
             return mid
