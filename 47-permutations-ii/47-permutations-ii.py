@@ -11,12 +11,12 @@ class Solution:
             for i in range(len(nums)):
                 if used[i]:
                     continue
-                if i > 0 and nums[i] == nums[i-1] and used[i-1]:
+                if i > 0 and nums[i] == nums[i-1] and used[i-1] :
                     continue
                 used[i] = 1
                 path.append(nums[i])
                 backtrack(nums)
-                path.pop()
                 used[i] = 0
+                path.pop()
         backtrack(nums)
         return result
