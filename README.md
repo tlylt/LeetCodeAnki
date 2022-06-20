@@ -22,4 +22,5 @@ Books/Guides/Tools that I actually read through/think is useful/refer to frequen
 - [x] Feb 2022
 - [x] March 2022
 - [x] April 2022
-- [ ] May 2022
+- [x] May 2022
+- [ ] June 2022
