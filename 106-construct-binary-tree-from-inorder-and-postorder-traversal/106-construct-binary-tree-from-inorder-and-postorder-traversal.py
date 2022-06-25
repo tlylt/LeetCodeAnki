@@ -10,8 +10,8 @@ class Solution:
             return None
         rootVal = postorder.pop()
         root = TreeNode(val=rootVal)
-        index = inorder.index(rootVal)
+        idx = inorder.index(rootVal)
         
-        root.left = self.buildTree(inorder[:index], postorder[:len(inorder[:index])])
-        root.right = self.buildTree(inorder[index+1:], postorder[len(inorder[:index]):])
+        root.left = self.buildTree(inorder[:idx], postorder[:len(inorder[:idx])])
+        root.right = self.buildTree(inorder[idx+1:], postorder[len(inorder[:idx]):])
         return root
