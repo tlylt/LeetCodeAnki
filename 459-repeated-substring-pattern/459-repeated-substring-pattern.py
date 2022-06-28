@@ -1,7 +1,7 @@
 class Solution:
     def repeatedSubstringPattern(self, s: str) -> bool:
         ref = self.helper(s)
-        if not ref[-1] ==  0 and len(s) % (len(s) - ref[-1]) == 0:
+        if ref[-1] != 0 and len(s) % (len(s)-ref[-1]) == 0:
             return True
         return False
     def helper(self, s):
@@ -11,6 +11,6 @@ class Solution:
             while l > 0 and s[l] != s[r]:
                 l = ans[l-1]
             if s[l] == s[r]:
-                ans[r] = l+1
+                ans[r] = l + 1
                 l += 1
         return ans
