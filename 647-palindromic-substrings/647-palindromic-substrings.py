@@ -8,7 +8,8 @@ class Solution:
                     if abs(j-i) <= 1:
                         ans += 1
                         dp[i][j] = True
-                    elif dp[i+1][j-1]:
-                        ans += 1
-                        dp[i][j] = True
+                    else:
+                        if dp[i+1][j-1]:
+                            ans += 1
+                            dp[i][j] = True
         return ans
