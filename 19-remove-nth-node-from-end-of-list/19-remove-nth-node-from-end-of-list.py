@@ -8,11 +8,11 @@ class Solution:
         dummy = ListNode(next=head)
         l = dummy
         r = dummy
-        while n > 0:
+        while n >= 0:
             r = r.next
             n -= 1
-        while r.next:
-            l = l.next
+        while r:
             r = r.next
+            l = l.next
         l.next = l.next.next
         return dummy.next
