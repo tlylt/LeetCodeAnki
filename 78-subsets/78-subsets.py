@@ -2,9 +2,9 @@ class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         result = []
         path = []
-        def backtrack(nums, idx):
+        def backtrack(nums, startIdx):
             result.append(path[:])
-            for i in range(idx, len(nums)):
+            for i in range(startIdx, len(nums)):
                 path.append(nums[i])
                 backtrack(nums, i+1)
                 path.pop()
