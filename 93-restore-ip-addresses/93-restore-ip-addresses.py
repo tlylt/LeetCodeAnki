@@ -10,10 +10,8 @@ class Solution:
     def restoreIpAddresses(self, s: str) -> List[str]:
         result = []
         def backtrack(s, startIdx, points):
-            if self.check(s, startIdx, len(s)-1) and points == 3:
+            if points == 3 and self.check(s, startIdx, len(s)-1):
                 result.append(s)
-                return
-            if points >= 3:
                 return
             for i in range(startIdx, len(s)):
                 if self.check(s, startIdx, i):
