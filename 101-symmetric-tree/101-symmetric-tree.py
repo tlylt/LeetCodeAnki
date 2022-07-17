@@ -12,10 +12,10 @@ class Solution:
     def helper(self, l, r):
         if not l and not r:
             return True
-        if l and not r:
+        elif not l and r:
             return False
-        if not l and r:
+        elif not r and l:
             return False
-        if l.val != r.val:
+        elif l.val != r.val:
             return False
         return self.helper(l.left, r.right) and self.helper(l.right, r.left)
