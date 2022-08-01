@@ -19,4 +19,4 @@ class Solution:
             if s[l] == s[r]:
                 h[r] = l + 1
                 l += 1
-        return  h
+        return h
