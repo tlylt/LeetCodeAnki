@@ -13,8 +13,8 @@ class Solution:
             if not root:
                 return
             if curr > depth:
-                depth = curr
                 result.append([])
+                depth = curr
             result[curr].append(root.val)
             backtrack(root.left, curr+1)
             backtrack(root.right, curr+1)
