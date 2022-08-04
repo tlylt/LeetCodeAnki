@@ -10,20 +10,20 @@ class Node:
 
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
-        s = deque()
         if not root:
             return
-        s.append(root)
-        while s:
-            l = len(s)
+        q = deque([root])
+        while q:
+            l = len(q)
             prev = None
             for i in range(l):
-                curr = s.popleft()
+                curr = q.popleft()
                 if prev:
                     prev.next = curr
                 prev = curr
                 if curr.left:
-                    s.append(curr.left)
+                    q.append(curr.left)
                 if curr.right:
-                    s.append(curr.right)
+                    q.append(curr.right)
         return root
+        
