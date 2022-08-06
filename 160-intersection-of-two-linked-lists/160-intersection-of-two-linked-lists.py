@@ -6,24 +6,11 @@
 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
-        l_a = self.findLength(headA)
-        l_b = self.findLength(headB)
-        while l_a > l_b:
-            headA = headA.next
-            l_a -= 1
-        while l_b > l_a:
-            headB = headB.next
-            l_b -= 1
-        while headA:
-            if headA == headB:
-                return headA
-            else:
-                headA = headA.next
-                headB = headB.next
-        return None
-    def findLength(self, node):
-        ans = 0
-        while node:
-            ans+=1
-            node = node.next
-        return ans
+        if not headA or not headB:
+            return None
+        curr_a = headA
+        curr_b = headB
+        while curr_a != curr_b:
+            curr_a = curr_a.next if curr_a else headB
+            curr_b = curr_b.next if curr_b else headA
+        return curr_a
