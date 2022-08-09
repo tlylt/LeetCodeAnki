@@ -10,6 +10,7 @@ class Q:
             self.q.popleft()
     def top(self):
         return self.q[0]
+
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         q = Q()
