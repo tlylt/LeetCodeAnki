@@ -12,14 +12,13 @@ class Solution:
             if not root.left and not root.right:
                 path.append(str(root.val))
                 ans.append("->".join(path[:]))
+                path.pop()
                 return
             path.append(str(root.val))
             if root.left:
                 backtrack(root.left)
-                path.pop()
             if root.right:
                 backtrack(root.right)
-                path.pop()
+            path.pop()
         backtrack(root)
         return ans
-        
