@@ -16,6 +16,7 @@ Books/Guides/Tools that I actually read through/think is useful/refer to frequen
 # More Materials
 - [Tech Interview Handbook](https://github.com/yangshun/tech-interview-handbook)
 - [Blink 75](https://techinterviewhandbook.org/best-practice-questions/)
+- [看动画，拿 Offer](https://blog.algomooc.com/)
 
 # Rewards & Motivation
 - [x] Jan 2022
