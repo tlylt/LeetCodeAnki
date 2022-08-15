@@ -8,3 +8,4 @@ class Solution:
             if ratings[j] > ratings[j+1]:
                 ans[j] = max(ans[j], ans[j+1]+1)
         return sum(ans)
+                
