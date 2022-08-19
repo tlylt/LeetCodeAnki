@@ -6,11 +6,11 @@
 #         self.right = right
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        s = deque()
         if not root:
             return []
-        curr = root
         ans = []
+        s = deque()
+        curr = root
         while s or curr:
             while curr:
                 s.append(curr)
