@@ -9,7 +9,7 @@ class Solution:
         return True
     def restoreIpAddresses(self, s: str) -> List[str]:
         result = []
-        def backtrack(s, startIdx, points):
+        def backtrack(s, points, startIdx):
             if points == 3 and self.check(s, startIdx, len(s)-1):
                 result.append(s)
                 return
@@ -18,7 +18,7 @@ class Solution:
             for i in range(startIdx, len(s)):
                 if self.check(s, startIdx, i):
                     s = s[:i+1] + '.' + s[i+1:]
-                    backtrack(s, i+2, points+1)
+                    backtrack(s, points+1, i+2)
                     s = s[:i+1] + s[i+2:]
         backtrack(s, 0, 0)
         return result
