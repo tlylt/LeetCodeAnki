@@ -6,8 +6,10 @@
 #         self.right = right
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        if not root:
+            return True
         ans = self.helper(root)
-        return ans != -1
+        return True if ans != -1 else False
     def helper(self, root):
         if not root:
             return 0
@@ -17,7 +19,6 @@ class Solution:
             return -1
         if r == -1:
             return -1
-        if abs(l-r) > 1:
+        if abs(r-l) > 1:
             return -1
         return 1 + max(l, r)
-        
