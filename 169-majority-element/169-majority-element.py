@@ -9,8 +9,8 @@ class Solution:
         rm = self.helper(nums, mid+1, r)
         if lm == rm:
             return lm
-        lc = sum([1 for i in range(l, r+1) if nums[i] == lm])
-        rc = sum([1 for i in range(l, r+1) if nums[i] == rm])
+        lc = sum([1 for i in nums[l:r+1] if i == lm])
+        rc = sum([1 for i in nums[l:r+1] if i == rm])
         if lc > rc:
             return lm
         return rm
