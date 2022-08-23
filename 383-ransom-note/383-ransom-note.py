@@ -1,10 +1,11 @@
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        h = [0] * 26
+        arr = [0] * 26
         for i in magazine:
-            h[ord(i)-ord('a')] = h[ord(i)-ord('a')] + 1
+            arr[ord(i)-ord('a')] += 1
         for j in ransomNote:
-            if h[ord(j)-ord('a')] <= 0:
+            if arr[ord(j)-ord('a')] >= 1:
+                arr[ord(j)-ord('a')] -= 1
+            else:
                 return False
-            h[ord(j)-ord('a')] -= 1
         return True
