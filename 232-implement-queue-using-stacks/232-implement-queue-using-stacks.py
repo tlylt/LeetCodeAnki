@@ -9,16 +9,24 @@ class MyQueue:
 
     def pop(self) -> int:
         if self.s2:
-            return self.s2.pop()
+            temp = self.s2[-1]
+            self.s2 = self.s2[:-1]
+            return temp
         while self.s1:
-            self.s2.append(self.s1.pop())
-        return self.s2.pop()
+            temp = self.s1[-1]
+            self.s2.append(temp)
+            self.s1 = self.s1[:-1]
+        ans = self.s2[-1]
+        self.s2 = self.s2[:-1]
+        return ans
+
     def peek(self) -> int:
-        temp = self.pop()
-        self.s2.append(temp)
-        return temp
+        ans = self.pop()
+        self.s2.append(ans)
+        return ans
+        
     def empty(self) -> bool:
-        return not self.s1 and not self.s2
+        return self.s1 == [] and self.s2 == []
 
 
 # Your MyQueue object will be instantiated and called as such:
