@@ -11,7 +11,7 @@ class Solution:
         def backtrack(root, curr):
             nonlocal depth, ans
             if not root:
-                return ans
+                return
             if curr > depth:
                 ans = root.val
                 depth = curr
