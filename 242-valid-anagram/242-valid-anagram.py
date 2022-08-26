@@ -1,14 +1,12 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        h = {}
+        if len(s) != len(t):
+            return False
+        ref = {}
         for i in s:
-            h[i] = h.get(i, 0) + 1
+            ref[i] = ref.get(i, 0) + 1
         for j in t:
-            if h.get(j, 0) == 0:
+            if j not in ref or ref[j] == 0:
                 return False
-            else:
-                h[j] -= 1
-        for k in h:
-            if h[k] >= 1:
-                return False
+            ref[j] -= 1
         return True
