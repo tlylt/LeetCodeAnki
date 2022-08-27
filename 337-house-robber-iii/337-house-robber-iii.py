@@ -14,5 +14,5 @@ class Solution:
         l = self.helper(root.left)
         r = self.helper(root.right)
         rob = root.val + l[1] + r[1]
-        dontrob = max(l[0], l[1]) + max(r[0], r[1])
-        return rob, dontrob
+        not_rob = max(l[0], l[1]) + max(r[0], r[1])
+        return rob, not_rob
