@@ -6,17 +6,19 @@
 #         self.right = right
 class Solution:
     def levelOrderBottom(self, root: Optional[TreeNode]) -> List[List[int]]:
-        result = []
+        ans = []
+        if not root:
+            return ans
         depth = -1
         def backtrack(root, curr):
-            nonlocal result, depth
-            if not root:
-                return
+            nonlocal depth, ans
             if curr > depth:
-                result.append([])
+                ans.append([])
                 depth = curr
-            result[curr].append(root.val)
-            backtrack(root.left, curr+1)
-            backtrack(root.right, curr+1)
+            ans[curr].append(root.val)
+            if root.left:
+                backtrack(root.left, curr+1)
+            if root.right:
+                backtrack(root.right, curr+1)
         backtrack(root, 0)
-        return result[::-1]
+        return ans[::-1]
