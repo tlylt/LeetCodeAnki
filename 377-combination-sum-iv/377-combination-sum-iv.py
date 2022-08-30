@@ -4,6 +4,6 @@ class Solution:
         dp[0] = 1
         for i in range(1, target+1):
             for j in range(len(nums)):
-                if nums[j] <= i:
+                if i >= nums[j]:
                     dp[i] += dp[i-nums[j]]
         return dp[target]
