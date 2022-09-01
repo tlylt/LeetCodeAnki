@@ -13,5 +13,5 @@ class Solution:
                     path.append(s[startIdx:i+1])
                     backtrack(s, i+1)
                     path.pop()
-        backtrack(s, 0)
+        backtrack(s,0)
         return result
