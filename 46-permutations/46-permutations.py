@@ -8,13 +8,12 @@ class Solution:
                 result.append(path[:])
                 return
             for i in range(len(nums)):
-                if used[i] == 1:
+                if used[i]:
                     continue
-                path.append(nums[i])
                 used[i] = 1
+                path.append(nums[i])
                 backtrack(nums)
                 path.pop()
                 used[i] = 0
         backtrack(nums)
         return result
-            
