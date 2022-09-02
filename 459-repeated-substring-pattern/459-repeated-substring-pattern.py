@@ -5,12 +5,12 @@ class Solution:
             return True
         return False
     def helper(self, s):
-        h = [0] * len(s)
+        ref = [0] * len(s)
         l = 0
         for r in range(1, len(s)):
             while l > 0 and s[l] != s[r]:
-                l = h[l-1]
+                l = ref[l-1]
             if s[l] == s[r]:
-                h[r] = l + 1
+                ref[r] = l + 1
                 l += 1
-        return h
+        return ref
