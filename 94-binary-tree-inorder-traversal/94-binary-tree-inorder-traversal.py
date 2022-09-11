@@ -9,14 +9,7 @@ class Solution:
         if not root:
             return []
         ans = []
-        s = deque()
-        curr = root
-        while s or curr:
-            while curr:
-                s.append(curr)
-                curr = curr.left
-            if s:
-                curr = s.pop()
-                ans.append(curr.val)
-                curr = curr.right
+        ans.extend(self.inorderTraversal(root.left))
+        ans.append(root.val)
+        ans.extend(self.inorderTraversal(root.right))
         return ans
