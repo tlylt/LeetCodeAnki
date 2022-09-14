@@ -6,5 +6,5 @@ class Solution:
                 if s[i-1] == t[j-1]:
                     dp[i][j] = dp[i-1][j-1] + 1
                 else:
-                    dp[i][j] = dp[i][j-1]
-        return dp[len(s)][len(t)] == len(s)
+                    dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+        return len(s) == dp[len(s)][len(t)]
