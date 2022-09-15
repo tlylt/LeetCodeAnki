@@ -9,13 +9,13 @@ class Solution:
         if not root:
             return True
         return self.helper(root.left, root.right)
-    def helper(self, l, r):
-        if not l and not r:
+    def helper(self, a, b):
+        if not a and not b:
             return True
-        elif not l and r:
+        elif not a and b:
             return False
-        elif not r and l:
+        elif not b and a:
             return False
-        elif l.val != r.val:
+        elif a.val != b.val:
             return False
-        return self.helper(l.left, r.right) and self.helper(l.right, r.left)
+        return self.helper(a.left, b.right) and self.helper(a.right, b.left)
