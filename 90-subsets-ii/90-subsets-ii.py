@@ -13,4 +13,3 @@ class Solution:
                 path.pop()
         backtrack(nums, 0)
         return result
-                
