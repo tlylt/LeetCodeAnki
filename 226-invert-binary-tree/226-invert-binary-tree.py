@@ -7,15 +7,9 @@
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         if not root:
-            return None
-        q = deque([root])
-        while q:
-            l = len(q)
-            for i in range(l):
-                curr = q.popleft()
-                curr.left, curr.right = curr.right, curr.left
-                if curr.left:
-                    q.append(curr.left)
-                if curr.right:
-                    q.append(curr.right)
+            return root
+        root.left, root.right = root.right, root.left
+        self.invertTree(root.left)
+        self.invertTree(root.right)
         return root
+        
