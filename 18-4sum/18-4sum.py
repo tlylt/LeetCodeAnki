@@ -8,14 +8,14 @@ class Solution:
             for j in range(i+1, len(nums)):
                 if j > i+1 and nums[j] == nums[j-1]:
                     continue
-                l = j+1
-                r = len(nums)-1
+                l = j + 1
+                r = len(nums) - 1
                 while l < r:
                     temp = nums[i] + nums[j] + nums[l] + nums[r]
-                    if temp > target:
-                        r -= 1
-                    elif temp < target:
+                    if temp < target:
                         l += 1
+                    elif temp > target:
+                        r -= 1
                     else:
                         ans.append([nums[i], nums[j], nums[l], nums[r]])
                         while l < r and nums[l] == nums[l+1]:
