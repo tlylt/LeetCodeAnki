@@ -4,4 +4,3 @@ class Solution:
         for i in range(1, len(nums)):
             ans ^= nums[i]
         return ans
-            
