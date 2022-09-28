@@ -4,13 +4,13 @@ class Solution:
     def partition(self, s: str) -> List[List[str]]:
         result = []
         path = []
-        def backtrack(s, startIdx):
-            if startIdx >= len(s):
+        def backtrack(s, idx):
+            if idx >= len(s):
                 result.append(path[:])
                 return
-            for i in range(startIdx, len(s)):
-                if self.check(s[startIdx:i+1]):
-                    path.append(s[startIdx:i+1])
+            for i in range(idx, len(s)):
+                if self.check(s[idx:i+1]):
+                    path.append(s[idx:i+1])
                     backtrack(s, i+1)
                     path.pop()
         backtrack(s, 0)
