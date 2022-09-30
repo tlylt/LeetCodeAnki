@@ -8,9 +8,11 @@ class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
         if not headA or not headB:
             return None
-        curr_a = headA
-        curr_b = headB
-        while curr_a != curr_b:
-            curr_a = curr_a.next if curr_a else headB
-            curr_b = curr_b.next if curr_b else headA
-        return curr_a
+        if headA == headB:
+            return headA
+        a = headA
+        b = headB
+        while a != b:
+            a = a.next if a else headB
+            b = b.next if b else headA
+        return a
