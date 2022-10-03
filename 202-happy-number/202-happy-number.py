@@ -1,16 +1,19 @@
 class Solution:
     def isHappy(self, n: int) -> bool:
-        h = set()
-        while n != 1:
+        ref = {}
+        while True:
             n = self.helper(n)
-            if n in h:
+            if n == 1:
+                return True
+            if n in ref:
                 return False
-            h.add(n)
-        return True
+            ref[n] = 1
+        return False
+        
     def helper(self, n):
         ans = 0
         while n > 0:
             d = n % 10
-            n = n // 10
-            ans += d*d
+            n //= 10
+            ans += d * d
         return ans
