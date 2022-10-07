@@ -8,19 +8,17 @@ class Solution:
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> List[List[int]]:
         result = []
         path = []
-        def helper(root, targetSum):
-            if not root:
-                return
-            if root.val == targetSum and not root.left and not root.right:
+        def backtrack(root, target):
+            if root and target == root.val and not root.left and not root.right:
                 path.append(root.val)
                 result.append(path[:])
                 path.pop()
                 return
+            if not root:
+                return
             path.append(root.val)
-            helper(root.left, targetSum - root.val)
+            backtrack(root.left, target-root.val)
+            backtrack(root.right, target-root.val)
             path.pop()
-            path.append(root.val)
-            helper(root.right, targetSum - root.val)
-            path.pop()
-        helper(root, targetSum)
+        backtrack(root, targetSum)
         return result
