@@ -8,4 +8,3 @@ class Solution:
                 if stones[i] <= j:
                     dp[j] = max(dp[j], dp[j-stones[i]] + stones[i])
         return (total - dp[target]) - dp[target]
-                
