@@ -12,9 +12,9 @@ class Solution:
             nonlocal depth
             if not root:
                 return
-            if curr > depth:
-                result.append([])
+            if depth < curr:
                 depth = curr
+                result.append([])
             result[curr].append(root.val)
             backtrack(root.left, curr+1)
             backtrack(root.right, curr+1)
