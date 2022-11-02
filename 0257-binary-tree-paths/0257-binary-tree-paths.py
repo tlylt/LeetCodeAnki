@@ -13,7 +13,7 @@ class Solution:
                 return
             if root and not root.left and not root.right:
                 path.append(str(root.val))
-                result.append("->".join(path))
+                result.append("->".join(path[:]))
                 path.pop()
                 return
             path.append(str(root.val))
