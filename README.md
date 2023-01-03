@@ -29,3 +29,6 @@ Books/Guides/Tools that I actually read through/think is useful/refer to frequen
 - [x] Aug 2022
 - [x] Sep 2022
 - [ ] Oct 2022
+- [ ] Nov 2022
+- [ ] Dec 2022
+- [ ] Jan 2023
