@@ -1,12 +1,10 @@
 class Solution:
     def numSquares(self, n: int) -> int:
-        dp = [float('inf')] * (n+1)
+        nums = [i**2 for i in range(1, n + 1) if i**2 <= n]
+        dp = [10**4]*(n + 1)
         dp[0] = 0
-        dp[1] = 1
-        for i in range(2, n+1):
-            for j in range(1, n):
-                s = j * j
-                if s > i:
-                    break
-                dp[i] = min(dp[i], dp[i-s] + 1)
+        for j in range(1, n + 1):
+            for num in nums:
+                if j >= num:
+                    dp[j] = min(dp[j], dp[j - num] + 1)
         return dp[n]
