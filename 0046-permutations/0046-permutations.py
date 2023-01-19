@@ -8,7 +8,7 @@ class Solution:
                 result.append(path[:])
                 return
             for i in range(len(nums)):
-                if used[i]:
+                if used[i] == 1:
                     continue
                 used[i] = 1
                 path.append(nums[i])
