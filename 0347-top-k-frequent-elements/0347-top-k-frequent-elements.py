@@ -7,9 +7,9 @@ class Solution:
         heap = []
         for ke, va in ref.items():
             heapq.heappush(heap, (va, ke))
+            if len(heap) > k:
+                heapq.heappop(heap)
         ans = []
-        for i in range(len(heap) - k):
-            heapq.heappop(heap)
         for i in range(k):
             ans.append(heapq.heappop(heap)[1])
         return ans
