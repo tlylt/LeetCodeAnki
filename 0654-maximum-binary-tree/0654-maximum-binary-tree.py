@@ -7,17 +7,15 @@
 class Solution:
     def find_max(self, nums, l, r):
         idx = l # impt!!!!! not != 0
-        for i in range(l, r+1):
+        for i in range(l, r):
             if nums[idx] < nums[i]:
                 idx = i
         return idx
     def constructMaximumBinaryTree(self, nums: List[int]) -> Optional[TreeNode]:
-        return self.helper(nums, 0, len(nums)-1)
-    def helper(self, nums, l, r):
-        if l > r:
+        if not nums:
             return None
-        idx = self.find_max(nums, l, r)
-        root = TreeNode(val = nums[idx])
-        root.left = self.helper(nums, l, idx-1)
-        root.right = self.helper(nums, idx+1, r)
+        max_val_idx = self.find_max(nums, 0, len(nums))
+        root = TreeNode(nums[max_val_idx])
+        root.left = self.constructMaximumBinaryTree(nums[:max_val_idx])
+        root.right = self.constructMaximumBinaryTree(nums[max_val_idx+1:])
         return root
