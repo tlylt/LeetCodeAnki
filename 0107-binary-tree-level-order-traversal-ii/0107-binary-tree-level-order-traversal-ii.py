@@ -8,15 +8,15 @@ class Solution:
     def levelOrderBottom(self, root: Optional[TreeNode]) -> List[List[int]]:
         result = []
         depth = -1
-        def backtrack(root, curr):
+        def helper(root, curr):
             nonlocal depth
             if not root:
                 return
-            if depth < curr:
+            if curr > depth:
                 depth = curr
                 result.append([])
             result[curr].append(root.val)
-            backtrack(root.left, curr+1)
-            backtrack(root.right, curr+1)
-        backtrack(root, 0)
+            helper(root.left, curr+1)
+            helper(root.right, curr+1)
+        helper(root, 0)
         return result[::-1]
