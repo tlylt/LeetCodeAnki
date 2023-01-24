@@ -6,10 +6,12 @@ class Solution:
             ans += self.helper(s, i, i, len(s))
             ans += self.helper(s, i, i+1, len(s))
         return ans
-    def helper(self, s, i, j, n):
+    def helper(self, s, l, r, size):
         ans = 0
-        while i >= 0 and j < n and s[i] == s[j]:
+        while l >= 0 and r < size and s[l] == s[r]:
             ans += 1
-            i -= 1
-            j += 1
+            l -= 1
+            r += 1
         return ans
+        
+        
