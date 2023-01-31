@@ -1,15 +1,17 @@
 # LeetCodeAnki
 **TLDR**: LeetCode + Spaced Repetition
 
-Reflecting & fine-tuning my strategy:
+# Reflection
 - For questions that have proved to be difficult to handle, I should leave them out and think hard about how to come up with their solutions. Hopefully that will reduce friction and not impact the overall pipeline (as seen in the missing targets for some months in 2022)
+- Do I really want to remember every single question and their solution?
+  - [I Try To Forget Everything And So Should You](https://www.youtube.com/watch?v=UAzQZdttdsA)
 
 
 # Tools
 - [Anki - Powerful, intelligent flash cards](https://apps.ankiweb.net/)
 - [LeetHub - Automatically sync your code to GitHub](https://github.com/QasimWani/LeetHub)
 
-# Reference Materials
+# Reference
 Books/Guides/Tools that I actually read through/think is useful/refer to frequently
 
 - [How to remember anything forever-ish by Nicky Case](https://ncase.me/remember/)
@@ -17,6 +19,7 @@ Books/Guides/Tools that I actually read through/think is useful/refer to frequen
 （Proficiency in Mandarin required)
 - [《代码随想录》LeetCode 刷题攻略 by Carl](https://github.com/youngyangyang04/leetcode-master)
 - [LeetcodeTop 汇总互联网公司题库 by 一个搬砖的胖子](https://codetop.cc/home)
+
 # More Materials
 - [Tech Interview Handbook](https://github.com/yangshun/tech-interview-handbook)
 - [Blink 75](https://techinterviewhandbook.org/best-practice-questions/)
@@ -36,3 +39,4 @@ Books/Guides/Tools that I actually read through/think is useful/refer to frequen
 - [ ] Nov 2022
 - [ ] Dec 2022
 - [ ] Jan 2023
+- [ ] Feb 2023
