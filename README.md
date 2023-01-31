@@ -1,6 +1,8 @@
 # LeetCodeAnki
 **TLDR**: LeetCode + Spaced Repetition
 
+Note: this is an ongoing experiment.
+
 # Reflection
 - For questions that have proved to be difficult to handle, I should leave them out and think hard about how to come up with their solutions. Hopefully that will reduce friction and not impact the overall pipeline (as seen in the missing targets for some months in 2022)
 - Do I really want to remember every single question and their solution?
