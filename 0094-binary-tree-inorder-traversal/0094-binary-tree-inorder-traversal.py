@@ -12,12 +12,13 @@ class Solution:
         stack = [root]
         while stack:
             if stack[-1]:
+                # visit
                 top = stack.pop()
                 if top.right:
                     stack.append(top.right)
                 
                 stack.append(top)
-                stack.append(None)
+                stack.append(None) # identifier
                 
                 if top.left:
                     stack.append(top.left)
