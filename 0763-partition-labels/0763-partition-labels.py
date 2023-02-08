@@ -3,12 +3,13 @@ class Solution:
         ref = {}
         for i in range(len(s)):
             ref[s[i]] = i
-        l = 0
-        reach = 0
+        
         ans = []
-        for r in range(len(s)):
-            reach = max(reach, ref[s[r]])
-            if reach == r:
-                ans.append(r-l+1)
-                l = r + 1
+        l = 0
+        cover = 0
+        for i in range(len(s)):
+            cover = max(cover, ref[s[i]])
+            if cover == i:
+                ans.append(i-l+1)
+                l = i+1
         return ans
