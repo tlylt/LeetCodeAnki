@@ -4,4 +4,6 @@ class Solution:
         for i in range(len(nums)):
             if nums[i] in ref:
                 return [ref[nums[i]], i]
-            ref[target-nums[i]] = i
+            else:
+                ref[target-nums[i]] = i
+        
