@@ -8,10 +8,9 @@ class Solution:
         dummy = ListNode(next=head)
         fast = dummy
         slow = dummy
-        while n > 0:
+        for i in range(n+1):
             fast = fast.next
-            n -= 1
-        while fast and fast.next:
+        while fast:
             slow = slow.next
             fast = fast.next
         slow.next = slow.next.next
