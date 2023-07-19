@@ -1,14 +1,12 @@
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        if len(ransomNote) > len(magazine):
+        if len(magazine) < len(ransomNote):
             return False
-        ref = {}
+        ref = [0] * 26
         for i in magazine:
-            ref[i] = ref.get(i, 0) + 1
+            ref[ord(i) - ord('a')] += 1
         for j in ransomNote:
-            if j not in ref:
+            if ref[ord(j) - ord('a')] <= 0:
                 return False
-            ref[j] -= 1
-            if ref[j] < 0:
-                return False
+            ref[ord(j) - ord('a')] -= 1
         return True
