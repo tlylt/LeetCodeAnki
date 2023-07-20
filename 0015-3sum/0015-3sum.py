@@ -3,6 +3,8 @@ class Solution:
         nums.sort()
         ans = []
         for i in range(len(nums)):
+            if nums[i] > 0: # because it's sorted
+                return ans
             if i > 0 and nums[i] == nums[i-1]:
                 continue
             l = i + 1
