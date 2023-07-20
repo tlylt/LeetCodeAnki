@@ -4,8 +4,10 @@ class Solution:
         ref = {}
         for i in range(len(nums1)):
             for j in range(len(nums2)):
-                ref[0 - (nums1[i] + nums2[j])] = ref.get((0-(nums1[i] + nums2[j])), 0) + 1
+                ref[0-(nums1[i]+nums2[j])] = ref.get(0-(nums1[i]+nums2[j]), 0) + 1
         for x in range(len(nums3)):
             for y in range(len(nums4)):
-                ans += ref.get(nums3[x] + nums4[y], 0)
+                temp = nums3[x] + nums4[y]
+                if temp in ref:
+                    ans += ref[temp]
         return ans
