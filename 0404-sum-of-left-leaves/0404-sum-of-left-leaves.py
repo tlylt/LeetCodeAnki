@@ -6,16 +6,8 @@
 #         self.right = right
 class Solution:
     def sumOfLeftLeaves(self, root):
-        if root is None:
+        if not root:
             return 0
-        if root.left is None and root.right is None:
-            return 0
-        
-        leftValue = self.sumOfLeftLeaves(root.left)  # 左
-        if root.left and not root.left.left and not root.left.right:  # 左子树是左叶子的情况
-            leftValue = root.left.val
-            
-        rightValue = self.sumOfLeftLeaves(root.right)  # 右
-
-        sum_val = leftValue + rightValue  # 中
-        return sum_val
+        if root.left and not root.left.left and not root.left.right:
+            return root.left.val + self.sumOfLeftLeaves(root.right)
+        return self.sumOfLeftLeaves(root.left) + self.sumOfLeftLeaves(root.right)
