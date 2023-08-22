@@ -3,7 +3,5 @@ class Solution:
         ref = {}
         for i in range(len(nums)):
             if nums[i] in ref:
-                return [ref[nums[i]], i]
-            else:
-                ref[target-nums[i]] = i
-        
+                return [i, ref.get(nums[i])]
+            ref[target - nums[i]] = i
