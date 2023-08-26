@@ -10,5 +10,3 @@ class Solution:
             ref.add(s[r])
             ans = max(ans, r-l+1)
         return ans
-                    
-                        
