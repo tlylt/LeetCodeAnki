@@ -6,10 +6,8 @@ class Solution:
             if temperatures[i] <= temperatures[stack[-1]]:
                 stack.append(i)
             else:
-                while len(stack) != 0 and temperatures[i] > temperatures[stack[-1]]:
+                while stack and temperatures[i] > temperatures[stack[-1]]:
                     ans[stack[-1]] = i - stack[-1]
                     stack.pop()
                 stack.append(i)
         return ans
-                
-                
