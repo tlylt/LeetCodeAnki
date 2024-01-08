@@ -18,7 +18,6 @@ Note: this is an ongoing experiment.
     - I'm slightly more confident about leetcoding
     - This provides me with an strategy to review/prep for coding interviews (just review the cards)
 - 28/12/2023
-  - Since I'm not planning to interview for a job actively, I'm going to experiment by doing one question a day
   - This time I will only add questions that are good, and delete questions if I don't think it's useful
 
 # Tools
@@ -54,3 +53,4 @@ Books/Guides/Tools that I actually read through/think is useful/refer to frequen
 - [ ] Dec 2022
 - [ ] Jan 2023
 - [ ] Feb 2023
+- [ ] Jan 2024
