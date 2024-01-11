@@ -2,11 +2,11 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
-        ref = [0] * 26
+        ref = {}
         for i in s:
-            ref[ord(i) - ord('a')] += 1
+            ref[i] = ref.get(i, 0) + 1
         for j in t:
-            if ref[ord(j) - ord('a')] <= 0:
+            if j not in ref or ref[j] <= 0:
                 return False
-            ref[ord(j) - ord('a')] -= 1
+            ref[j] -= 1
         return True
