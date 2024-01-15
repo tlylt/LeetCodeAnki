@@ -8,6 +8,6 @@ class Solution:
         for j in t:
             ref[ord(j) - ord('a')] -= 1
         for k in ref:
-            if k < 0:
+            if k != 0:
                 return False
         return True
