@@ -1,7 +1,7 @@
 class MyQueue:
 
     def __init__(self):
-        self.s1 = []        
+        self.s1 = []
         self.s2 = []
 
     def push(self, x: int) -> None:
@@ -15,14 +15,12 @@ class MyQueue:
         return self.s2.pop()
 
     def peek(self) -> int:
-        if self.s2:
-            return self.s2[-1]
-        if self.s1:
-            temp = self.pop()
-            self.s2.append(temp)
-            return temp
+        ans = self.pop()
+        self.s2.append(ans)
+        return ans
+
     def empty(self) -> bool:
-        return self.s1 == [] and self.s2 == []
+        return not self.s1 and not self.s2
 
 
 # Your MyQueue object will be instantiated and called as such:
