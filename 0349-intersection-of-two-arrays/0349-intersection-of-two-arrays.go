@@ -1,7 +1,7 @@
 func intersection(nums1 []int, nums2 []int) []int {
     count1 := make([]int, 1001, 1001)
     count2 := make([]int, 1001, 1001)
-    ans := make([]int, 0)
+    res := make([]int, 0)
     for _, v := range nums1 {
         count1[v] = 1
     }
@@ -10,8 +10,8 @@ func intersection(nums1 []int, nums2 []int) []int {
     }
     for i := 0; i <= 1000; i++ {
         if count1[i] + count2[i] == 2 {
-            ans = append(ans, i)
+            res = append(res, i)
         }
     }
-    return ans
+    return res
 }
