@@ -1,15 +1,16 @@
 func intersection(nums1 []int, nums2 []int) []int {
-    set := make(map[int]struct{}, 0)
+    count1 := make([]int, 1001, 1001)
+    count2 := make([]int, 1001, 1001)
     ans := make([]int, 0)
     for _, v := range nums1 {
-        if _, ok := set[v]; !ok {
-            set[v] = struct{}{}
-        }
+        count1[v] = 1
     }
     for _, v := range nums2 {
-        if _, ok := set[v]; ok {
-            ans = append(ans, v)
-            delete(set, v)
+        count2[v] = 1
+    }
+    for i := 0; i <= 1000; i++ {
+        if count1[i] + count2[i] == 2 {
+            ans = append(ans, i)
         }
     }
     return ans
