@@ -3,7 +3,6 @@ func commonChars(words []string) []string {
     for _, char := range words[0] {
         ref[char-'a']++
     }
-    var ans []string
     for i := 1; i < len(words); i++ {
         ref2 := make([]int, 26)
         w := words[i]
@@ -16,6 +15,12 @@ func commonChars(words []string) []string {
             }
         }
     }
+    totalElements := 0
+    for _, val := range ref {
+        totalElements += val
+    }
+
+    ans := make([]string, 0, totalElements)
     for idx, val := range ref {
         for val > 0 {
             ans = append(ans, string('a' + idx))
