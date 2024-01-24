@@ -11,13 +11,14 @@ class Solution:
         q = deque([root])
         ans = []
         while q:
-            ref = []
-            for i in range(len(q)):
+            l = len(q)
+            level = []
+            for i in range(l):
                 curr = q.popleft()
                 if curr.left:
                     q.append(curr.left)
                 if curr.right:
                     q.append(curr.right)
-                ref.append(curr.val)
-            ans.append(ref)
+                level.append(curr.val)
+            ans.append(level)
         return ans
