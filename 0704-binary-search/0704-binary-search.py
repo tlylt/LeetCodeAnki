@@ -7,7 +7,7 @@ class Solution:
         mid = l + (r-l) // 2
         if nums[mid] == target:
             return mid
-        elif nums[mid] < target:
-            return self.binary(mid+1, r, nums, target)
-        else:
+        elif nums[mid] > target:
             return self.binary(l, mid-1, nums, target)
+        else:
+            return self.binary(mid+1, r, nums, target)
