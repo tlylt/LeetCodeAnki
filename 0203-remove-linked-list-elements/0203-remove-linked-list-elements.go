@@ -6,10 +6,10 @@
  * }
  */
 func removeElements(head *ListNode, val int) *ListNode {
-    dummyHead := &ListNode{
+    dummy := &ListNode{
         Next: head,
     }
-    curr := dummyHead
+    curr := dummy
     for curr.Next != nil {
         if curr.Next.Val == val {
             curr.Next = curr.Next.Next
@@ -17,6 +17,5 @@ func removeElements(head *ListNode, val int) *ListNode {
             curr = curr.Next
         }
     }
-    return dummyHead.Next
-    
+    return dummy.Next
 }
