@@ -6,6 +6,6 @@ class Solution:
         pt = len(s) - 1
         for i in range(len(g)-1, -1, -1):
             if pt >= 0 and s[pt] >= g[i]:
-                ans += 1
                 pt -= 1
+                ans += 1
         return ans
