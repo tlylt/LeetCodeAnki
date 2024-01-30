@@ -7,7 +7,6 @@ class Solution:
             ref[ord(i) - ord('a')] += 1
         for j in t:
             ref[ord(j) - ord('a')] -= 1
-        for k in ref:
-            if k != 0:
+            if ref[ord(j) - ord('a')] < 0:
                 return False
         return True
