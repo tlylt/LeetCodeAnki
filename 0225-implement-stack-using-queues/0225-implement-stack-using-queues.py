@@ -8,14 +8,15 @@ class MyStack:
 
     def pop(self) -> int:
         l = len(self.q)
-        for i in range(l-1):
+        while l >= 2:
             self.q.append(self.q.popleft())
+            l -= 1
         return self.q.popleft()
 
     def top(self) -> int:
-        temp = self.pop()
-        self.push(temp)
-        return temp
+        val = self.pop()
+        self.push(val)
+        return val
 
     def empty(self) -> bool:
         return len(self.q) == 0
