@@ -3,9 +3,11 @@ class Solution:
         g.sort()
         s.sort()
         ans = 0
-        pt = len(s) - 1
-        for i in range(len(g)-1, -1, -1):
-            if pt >= 0 and s[pt] >= g[i]:
+        pt = len(g) - 1
+        for cookie in range(len(s)-1, -1, -1):
+            while pt > 0 and g[pt] > s[cookie]:
                 pt -= 1
+            if pt >= 0 and g[pt] <= s[cookie]:
                 ans += 1
+                pt -= 1
         return ans
