@@ -1,19 +1,22 @@
 class Solution:
     def commonChars(self, words: List[str]) -> List[str]:
-        ref = [0] * 26
+        ref = {}
         for i in words[0]:
-            ref[ord(i)-ord('a')] += 1
+            ref[i] = ref.get(i, 0) + 1
         for j in range(1, len(words)):
             w = words[j]
-            ref2 = [0] * 26
+            ref2 = {}
             for k in w:
-                ref2[ord(k)-ord('a')] += 1
-            for x in range(26):
-                ref[x] = min(ref[x], ref2[x])
-        
+                ref2[k] = ref2.get(k, 0) + 1
+            for key, val in ref.items():
+                if key in ref2:
+                    ref[key] = min(val, ref2[key])
+                else:
+                    ref[key] = 0
         ans = []
-        for y in range(26):
-            while ref[y] > 0:
-                ans.append(chr(y + ord('a')))
-                ref[y] -= 1
+        for key, val in ref.items():
+            while val >= 1:
+                ans.append(key)
+                val -= 1
         return ans
+                
