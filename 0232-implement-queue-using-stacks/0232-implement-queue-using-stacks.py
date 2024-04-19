@@ -10,17 +10,19 @@ class MyQueue:
     def pop(self) -> int:
         if self.s2:
             return self.s2.pop()
-        while self.s1:
+        for i in range(len(self.s1)):
             self.s2.append(self.s1.pop())
         return self.s2.pop()
 
     def peek(self) -> int:
-        val = self.pop()
-        self.s2.append(val)
-        return val
+        if self.s2:
+            return self.s2[-1]
+        temp = self.pop()
+        self.s2.append(temp)
+        return temp
 
     def empty(self) -> bool:
-        return self.s1 == self.s2 == []  
+        return self.s1 == self.s2 == []
 
 
 # Your MyQueue object will be instantiated and called as such:
