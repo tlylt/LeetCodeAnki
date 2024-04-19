@@ -53,4 +53,4 @@ Books/Guides/Tools that I actually read through/think is useful/refer to frequen
 - [ ] Dec 2022
 - [ ] Jan 2023
 - [ ] Feb 2023
-- [.] 2024
+- 2024 - WIP
